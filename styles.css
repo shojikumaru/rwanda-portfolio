@@ -148,3 +148,9 @@ a.card:hover,a.prod:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20p
   .img-note{position:static;padding:0 18px 12px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.rwf{display:block;font-style:normal;font-size:12px;opacity:.75;margin-top:4px}
+.proof .rwf{color:var(--on-dark-muted);margin:0}
+.fx-note{margin:8px 0 0;font-size:12px;color:var(--muted)}
+.partner{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:22px;padding:14px 18px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:13px;color:var(--muted)}
+.partner img{height:18px;width:auto}
+.fx-ref{text-decoration:none;color:inherit}
