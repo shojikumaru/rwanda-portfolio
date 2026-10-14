@@ -22,3 +22,15 @@
     b.addEventListener("click", function () { setLang(b.getAttribute("data-set-lang")); });
   });
 })();
+document.querySelectorAll(".vid").forEach(function (box) {
+  var btn = box.querySelector(".play-btn");
+  btn.addEventListener("click", function () {
+    var v = document.createElement("video");
+    v.src = box.getAttribute("data-src");
+    v.controls = true; v.playsInline = true; v.preload = "auto";
+    v.poster = box.querySelector("img").getAttribute("src");
+    box.innerHTML = ""; box.appendChild(v);
+    v.play().catch(function () {});
+    v.focus();
+  });
+});
