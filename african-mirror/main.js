@@ -14,7 +14,11 @@
   // Captions were checked: posts naming individuals or framed as donation appeals are left out.
   // Before going public, every code here must be cleared with the crew/guardians.
   const IG_PROFILE = 'https://www.instagram.com/african_mirror.1/';
-  const REELS = []; // public build: no Instagram posts until usage is approved
+  const REELS = [
+    'DeV90AsNF30', 'DcRyv79Nh87', 'Dcy8IEkNO8G', 'DcO2SE2NMiz', 'Db2i1qWtqI_',
+    'DcZKHL_tRkU', 'Dcz_JMFtxNe', 'DZpwIulNP5M', 'DeXdgRntCYq', 'DeZrwQNtHyu',
+    'Db8-2dTN7z-', 'DdD0kT1NU3b', 'Db8CftbNJWr', 'Dc3yq5eNoOJ', 'DeUwaU5NMwm'
+  ];
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s, r = document) => r.querySelector(s);
@@ -323,7 +327,7 @@
   });
 
   /* ---------- Stage: Instagram reels (official embeds) ---------- */
-  const rail = null; // public build: reels removed
+  const rail = $('[data-reels]');
   const setlist = $('[data-setlist]');
   const pad = (n) => String(n).padStart(2, '0');
 
@@ -409,7 +413,6 @@
     setlist && setlist.addEventListener('click', (e) => { const b = e.target.closest('[data-jump]'); if (b) goTo(Number(b.dataset.jump)); });
   }
   function labelReels() {
-    if (!rail) return;
     $$('.reel', rail).forEach((it) => $('.reel__link', it).setAttribute('aria-label', `${t('stage.watch')} ${it.dataset.no}`));
     if (!setlist) return;
     setlist.setAttribute('aria-label', t('stage.setlist'));

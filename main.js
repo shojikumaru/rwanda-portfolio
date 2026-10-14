@@ -1,8 +1,8 @@
 (function () {
   var root = document.documentElement;
   var titles = {
-    en: "Sho Jikumaru — AI operations for government | re;plus asia",
-    ja: "軸丸 翔 — 政府の現場でAIを回す | re;plus asia"
+    en: "Sho Jikumaru — AI operations for government | replus asia ltd.",
+    ja: "軸丸 翔 — 政府の現場でAIを回す | replus asia ltd."
   };
   function setLang(lang) {
     if (lang !== "en" && lang !== "ja") lang = "en";
@@ -33,4 +33,10 @@ document.querySelectorAll(".vid").forEach(function (box) {
     v.play().catch(function () {});
     v.focus();
   });
+});
+document.querySelectorAll(".carousel").forEach(function (c) {
+  var t = c.querySelector(".track");
+  function step(d) { var card = t.querySelector(".voice"); t.scrollBy({ left: d * (card ? card.offsetWidth + 20 : 300), behavior: "smooth" }); }
+  c.querySelector(".car-prev").addEventListener("click", function () { step(-1); });
+  c.querySelector(".car-next").addEventListener("click", function () { step(1); });
 });
