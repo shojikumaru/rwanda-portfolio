@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Launch Track Rwanda — Get hired. Learn from real projects. Launch your own business.</title>
+<meta name="description" content="A 3-year paid apprenticeship in Rwanda. Work on real projects with Japanese companies, learn AI-powered business and video creative, then graduate and launch your own business.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0b3d2e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='14' fill='%23f7c600'/%3E%3C/svg%3E">
+<style>
+:root{
+  --forest:#0b3d2e; --forest-2:#0f5240; --sky:#2fa8e0; --sky-soft:#dff1fb;
+  --sun:#f7c600; --sun-deep:#e8a400; --leaf:#22a45d; --paper:#fffaf0; --ink:#10201a; --muted:#4f6159;
+  --r:18px; --pad:clamp(20px,5vw,40px);
+  --display:"Avenir Next","Segoe UI","Helvetica Neue",Arial,system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--display);color:var(--ink);background:var(--paper);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 var(--pad)}
+.draft-bar{background:var(--ink);color:#fff;font-size:12.5px;text-align:center;padding:8px 14px;letter-spacing:.02em}
+.draft-bar b{color:var(--sun)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(11,61,46,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;text-decoration:none;letter-spacing:.01em}
+.brand i{width:18px;height:18px;border-radius:50%;background:var(--sun);box-shadow:0 0 0 4px rgba(247,198,0,.25)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:inherit;font-weight:800;border:0;border-radius:999px;cursor:pointer;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-sun{background:var(--sun);color:var(--ink);padding:16px 28px;font-size:17px;box-shadow:0 8px 0 var(--sun-deep)}
+.btn-sun:hover{transform:translateY(-2px)}
+.btn-sun:active{transform:translateY(5px);box-shadow:0 3px 0 var(--sun-deep)}
+.btn-sm{padding:9px 16px;font-size:14px;box-shadow:0 4px 0 var(--sun-deep)}
+.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.arrow{display:inline-block;transition:transform .2s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--forest) 0%,var(--forest-2) 62%,#147a54 100%);color:#fff;padding:56px 0 0}
+.sun{position:absolute;right:-120px;top:-60px;width:min(560px,120vw);aspect-ratio:1;pointer-events:none;opacity:.95}
+@media(max-width:719px){.sun{width:330px;right:-150px;top:-90px;opacity:.32}}
+.sun .rays{transform-origin:50% 50%;animation:spin 90s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero .wrap{position:relative}
+.eyebrow{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sun);background:rgba(255,255,255,.08);border:1px solid rgba(247,198,0,.4);padding:7px 12px;border-radius:999px}
+.hero h1{font-size:clamp(40px,10.5vw,92px);line-height:.98;letter-spacing:-.035em;margin:22px 0 22px;font-weight:900;max-width:11ch}
+.hero h1 span{display:block}
+.hero h1 .hl{color:var(--sun)}
+.hero p.lead{font-size:clamp(17px,4.4vw,21px);max-width:34ch;color:#e6f2ec;margin:0 0 30px}
+.hero-cta{display:flex;flex-wrap:wrap;align-items:center;gap:18px 22px}
+.hero-cta small{color:#bfe0d2;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:40px 0 0;padding:0;list-style:none}
+.chips li{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:9px 14px;border-radius:12px;font-size:14.5px;font-weight:700}
+.chips li b{color:var(--sun)}
+.hills{display:block;width:100%;height:auto;margin-top:46px}
+
+/* sections */
+section{padding:clamp(64px,11vw,110px) 0}
+.kicker{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf)}
+h2{font-size:clamp(32px,7.4vw,56px);line-height:1.04;letter-spacing:-.03em;margin:10px 0 18px;font-weight:900}
+.sub{color:var(--muted);font-size:18px;max-width:46ch;margin:0}
+
+/* track */
+.track{list-style:none;margin:44px 0 0;padding:0;position:relative}
+.track::before{content:"";position:absolute;left:23px;top:10px;bottom:10px;width:4px;border-radius:4px;background:#e4ece7}
+.track::after{content:"";position:absolute;left:23px;top:10px;width:4px;border-radius:4px;background:linear-gradient(var(--sky),var(--leaf),var(--sun));height:var(--fill,0px);transition:height .15s linear}
+.step{position:relative;padding:0 0 30px 72px}
+.step:last-child{padding-bottom:0}
+.dot{position:absolute;left:6px;top:0;width:38px;height:38px;border-radius:50%;background:#fff;border:4px solid #e4ece7;display:grid;place-items:center;font-weight:900;font-size:14px;color:var(--muted);transition:all .35s;z-index:1}
+.step.on .dot{border-color:var(--leaf);color:var(--forest);transform:scale(1.06)}
+.step.final .dot{background:var(--sun);border-color:var(--sun-deep);color:var(--ink)}
+.card{background:#fff;border-radius:var(--r);padding:22px 22px 20px;box-shadow:0 1px 0 rgba(16,32,26,.06),0 12px 30px -18px rgba(16,32,26,.35)}
+.when{font-size:12.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--sky)}
+.card h3{font-size:23px;line-height:1.15;margin:6px 0 8px;letter-spacing:-.01em}
+.card p{margin:0;color:var(--muted)}
+.card ul{margin:10px 0 0;padding-left:18px;color:var(--muted)}
+.step.final .card{background:var(--forest);color:#fff}
+.step.final .card p,.step.final .card ul{color:#d5ebe1}
+.step.final .when{color:var(--sun)}
+.tag{display:inline-block;margin-top:12px;font-size:12.5px;font-weight:800;background:var(--sky-soft);color:#0c5f86;padding:5px 10px;border-radius:8px}
+.pay{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 10px;margin:12px 0 0;padding:10px 14px;border-radius:12px;background:#f2f8f4;font-weight:800}
+.pay b{font-size:19px;color:var(--forest)}
+.pay small{font-weight:600;color:var(--muted);font-size:13px}
+.step.final .pay{background:rgba(255,255,255,.08)}.step.final .pay b{color:var(--sun)}.step.final .pay small{color:#bcd9cc}
+.money{background:#fff;border-radius:var(--r);margin-top:34px;overflow:hidden;box-shadow:0 12px 30px -18px rgba(16,32,26,.35)}
+.money table{width:100%;border-collapse:collapse;font-size:15.5px}
+.money th,.money td{text-align:left;padding:14px 16px;border-bottom:1px solid #edf2ef;vertical-align:top}
+.money th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:#f6faf7}
+.money td b{display:block;font-size:17px}
+.money td small{color:var(--muted)}
+.money tr:last-child td{border-bottom:0}
+.fine{font-size:13.5px;color:var(--muted);margin:14px 2px 0}
+.step.final .tag{background:rgba(247,198,0,.18);color:var(--sun)}
+
+.photos{display:grid;gap:12px;margin-top:34px}
+@media(min-width:820px){.photos{grid-template-columns:1.3fr 1fr 1fr}}
+.photos figure{margin:0;border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:4/3;background:#e4ece7}
+.photos img{width:100%;height:100%;object-fit:cover;display:block}
+.photos figcaption{position:absolute;left:12px;bottom:12px;background:rgba(11,61,46,.85);color:#fff;font-weight:800;font-size:14px;padding:6px 12px;border-radius:10px}
+.aicap{font-size:12.5px;color:var(--muted);margin:10px 2px 0}
+/* learn */
+.learn{background:var(--sky-soft)}
+.grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+.skill{background:#fff;border-radius:var(--r);padding:24px;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start}
+.skill .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center}
+.skill h3{margin:2px 0 6px;font-size:21px;letter-spacing:-.01em}
+.skill p{margin:0;color:var(--muted)}
+.skill.feat{grid-column:1/-1;background:var(--forest);color:#fff}
+.skill.feat p{color:#d5ebe1}
+
+/* promise */
+.promise .row{display:grid;gap:14px;margin-top:34px}
+@media(min-width:820px){.promise .row{grid-template-columns:repeat(3,1fr)}}
+.pill{border:2px solid var(--ink);border-radius:var(--r);padding:22px}
+.pill b{display:block;font-size:20px;margin-bottom:6px}
+.pill p{margin:0;color:var(--muted)}
+
+/* fit */
+.fit ul{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:12px}
+.fit li{display:flex;gap:14px;align-items:flex-start;font-size:18px;font-weight:600}
+.fit li::before{content:"";flex:none;width:26px;height:26px;margin-top:1px;border-radius:50%;background:var(--leaf) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+
+/* faq */
+.faq details{border-bottom:1px solid #e1e8e4;padding:4px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-weight:800;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:var(--sky-soft);display:grid;place-items:center;font-size:20px;transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:0 0 18px;color:var(--muted);max-width:60ch}
+
+/* apply */
+.apply{position:relative;overflow:hidden;background:var(--forest);color:#fff;text-align:center}
+.apply h2{max-width:14ch;margin-left:auto;margin-right:auto}
+.apply .sub{color:#cfe6dc;margin:0 auto 32px}
+.apply .sun2{position:absolute;left:50%;bottom:-220px;width:440px;transform:translateX(-50%);opacity:.18;pointer-events:none}
+.note{margin-top:22px;font-size:14px;color:#a9cfbf;min-height:1.5em}
+.note.show{color:var(--sun);font-weight:700}
+
+footer{background:var(--ink);color:#9fb3aa;font-size:13.5px;padding:28px 0 calc(28px + env(safe-area-inset-bottom))}
+footer p{margin:4px 0}
+
+/* sticky mobile CTA */
+.mcta{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;transform:translateY(140%);transition:transform .35s}
+.mcta.show{transform:none}
+.mcta .btn{width:100%;padding:15px}
+@media(min-width:820px){.mcta{display:none}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .sun .rays{animation:none}
+  .rv{opacity:1;transform:none;transition:none}
+  .track::after{transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="draft-bar"><b>Draft concept</b> · All amounts are planned estimates and may change.</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"></i>Launch Track Rwanda</a>
+    <a class="btn btn-sun btn-sm" href="#apply">Apply</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:0">
+    <svg class="sun" viewBox="0 0 200 200" aria-hidden="true">
+      <g class="rays" fill="#f7c600">
+        <!-- abstract sunrise (16 rays) -->
+        <g id="ray"><path d="M100 4 L106 46 L94 46 Z"/></g>
+      </g>
+      <circle cx="100" cy="100" r="44" fill="#0f5240"/>
+      <circle cx="100" cy="100" r="38" fill="#f7c600"/>
+    </svg>
+    <div class="wrap">
+      <span class="eyebrow">3-year paid apprenticeship · Rwanda</span>
+      <h1><span>Get hired.</span><span>Learn from real&nbsp;projects.</span><span class="hl">Launch your own business.</span></h1>
+      <p class="lead">Join a team in Rwanda, work on real projects with Japanese companies, and graduate ready to run your own business.</p>
+      <div class="hero-cta">
+        <a class="btn btn-sun" href="#apply">Apply now <span class="arrow" aria-hidden="true">→</span></a>
+        <small>Starts with a 3-day AI startup bootcamp</small>
+      </div>
+      <ul class="chips" aria-label="Program at a glance">
+        <li><b>3 days</b> AI startup bootcamp</li>
+        <li><b>Up to 3 years</b> paid job · from about RWF 140,000/month (planned)</li>
+        <li><b>Real</b> client projects</li>
+        <li><b>Graduate</b> &amp; go independent</li>
+      </ul>
+    </div>
+    <svg class="hills" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 70 C 180 20 320 20 480 60 S 820 110 980 60 S 1300 10 1440 50 L1440 120 L0 120 Z" fill="#22a45d" opacity=".55"/>
+      <path d="M0 95 C 220 55 420 70 620 92 S 1040 120 1240 86 S 1400 70 1440 80 L1440 120 L0 120 Z" fill="#fffaf0"/>
+    </svg>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap">
+      <span class="kicker">How it works</span>
+      <h2 class="rv">From bootcamp to your own business.</h2>
+      <p class="sub rv">One clear path. You get a real job, real projects, and a real plan to go independent.</p>
+
+      <ol class="track" id="track">
+        <li class="step rv">
+          <span class="dot">0</span>
+          <div class="card">
+            <span class="when">Entry · 3 days, 2 nights</span>
+            <h3>AI Startup Bootcamp</h3>
+            <p>Build a business idea with AI tools in three days. Show us how you think, learn and work in a team. This is how we select apprentices.</p>
+          </div>
+        </li>
+        <li class="step rv">
+          <span class="dot">1</span>
+          <div class="card">
+            <span class="when">Year 1 · Get hired</span>
+            <h3>Learn the basics, join real work</h3>
+            <p>You are employed and paid every month. Learn the fundamentals and support real projects with Japanese partner companies.</p>
+            <p class="pay"><b>about RWF 140,000 / month</b><small>¥15,000 · planned</small></p>
+            <span class="tag">Starts with a 3-month trial period</span>
+          </div>
+        </li>
+        <li class="step rv">
+          <span class="dot">2</span>
+          <div class="card">
+            <span class="when">Year 2 · Take the lead</span>
+            <h3>Own real projects</h3>
+            <p>Become the main person on real client projects. Choose the business theme you want to build.</p>
+            <p class="pay"><b>about RWF 163,000 / month</b><small>¥17,500 · planned</small></p>
+          </div>
+        </li>
+        <li class="step rv">
+          <span class="dot">3</span>
+          <div class="card">
+            <span class="when">Year 3 · Get ready to launch</span>
+            <h3>Build your own business</h3>
+            <ul>
+              <li>Write your business plan</li>
+              <li>Interview real customers</li>
+              <li>Build a prototype</li>
+              <li>Win your first customer</li>
+            </ul>
+            <p style="margin-top:10px">Career support starts 6 months before the end.</p>
+            <p class="pay"><b>about RWF 186,000 / month</b><small>¥20,000 · planned</small></p>
+          </div>
+        </li>
+        <li class="step final rv">
+          <span class="dot">★</span>
+          <div class="card">
+            <span class="when">Graduation</span>
+            <h3>Launch your own business</h3>
+            <p>Everyone who completes the 3 years graduates with a graduation bonus. Graduate with a business plan and your first customer? Your total support grows to up to <b style="color:#fff">about RWF 932,000</b>, including the bonus, plus a first order. Prefer a job? We help you get hired with real experience and a reference letter.</p>
+            <p class="pay"><b>Up to about RWF 932,000</b><small>¥100,000 total incl. graduation bonus · planned</small></p>
+            <span class="tag">Graduate → your business or a new job</span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <span class="kicker">Where this can take you</span>
+      <h2 class="rv">Real work. Real responsibility.</h2>
+      <div class="photos">
+        <figure class="rv"><img src="assets/img/office-900.jpg" width="900" height="600" loading="lazy" alt="A young professional in a navy suit working on a laptop in a bright Kigali office"><figcaption>Run real projects</figcaption></figure>
+        <figure class="rv"><img src="assets/img/construction-900.jpg" width="900" height="600" loading="lazy" alt="A young site supervisor giving directions to two workers on a construction site in Kigali"><figcaption>Own real projects</figcaption></figure>
+        <figure class="rv"><img src="assets/img/creator-900.jpg" width="900" height="600" loading="lazy" alt="A young video creator editing a client video while a colleague shows her a shot on his camera"><figcaption>Create for clients</figcaption></figure>
+      </div>
+      <p class="aicap">Images are AI-generated for illustration.</p>
+    </div>
+  </section>
+
+  <!-- PAY -->
+  <section id="pay" style="padding-top:0">
+    <div class="wrap">
+      <span class="kicker">Pay &amp; support · planned</span>
+      <h2 class="rv">Get paid while you learn.</h2>
+      <p class="sub rv">A monthly salary that grows each year, then real money to launch your business. These are planned estimates for this draft.</p>
+      <div class="money rv">
+        <table>
+          <thead><tr><th>Stage</th><th>Planned amount</th></tr></thead>
+          <tbody>
+            <tr><td><b>Bootcamp</b><small>3 days, 2 nights · selection</small></td><td><b>No salary</b><small>Selection stage</small></td></tr>
+            <tr><td><b>Year 1</b><small>Learn &amp; support real projects</small></td><td><b>about RWF 140,000 / month</b><small>¥15,000</small></td></tr>
+            <tr><td><b>Year 2</b><small>Lead real projects</small></td><td><b>about RWF 163,000 / month</b><small>¥17,500</small></td></tr>
+            <tr><td><b>Year 3</b><small>Prepare your launch</small></td><td><b>about RWF 186,000 / month</b><small>¥20,000</small></td></tr>
+            <tr><td><b>Graduation</b><small>Everyone who completes 3 years</small></td><td><b>Graduation bonus</b><small>Amount to be announced</small></td></tr>
+            <tr><td><b>Launch support</b><small>For graduates with a business plan and a first customer</small></td><td><b>Up to about RWF 932,000 total</b><small>¥100,000 total incl. graduation bonus · cash, equipment and orders combined · plus a first order</small></td></tr>
+            <tr><td><b>Stay as a leader</b><small>By invitation only · you help the next group launch</small></td><td><b>about RWF 210,000–233,000 / month</b><small>¥22,500–25,000</small></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="fine">Amounts are paid in line with the employment contract. RWF figures are estimates at ¥1 ≈ RWF 9.32 (14 Oct 2026) and will follow the final contract. Contracts are renewed yearly.</p>
+    </div>
+  </section>
+
+  <!-- WHAT YOU'LL LEARN -->
+  <section class="learn" id="learn">
+    <div class="wrap">
+      <span class="kicker">What you'll learn</span>
+      <h2 class="rv">Skills that build businesses.</h2>
+      <p class="sub rv">Japanese partner companies teach you their know-how through real projects, not just lectures.</p>
+      <div class="grid">
+        <div class="skill feat rv">
+          <span class="ic" style="background:var(--sun)" aria-hidden="true">
+            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#10201a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+          </span>
+          <div><h3>Building a business with AI</h3><p>Use AI to research markets, shape ideas, create offers and run day-to-day work — and turn it into a business that earns.</p></div>
+        </div>
+        <div class="skill rv">
+          <span class="ic" style="background:var(--sky)" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg>
+          </span>
+          <div><h3>Video creative</h3><p>Plan, shoot and edit videos and ads that people want to watch.</p></div>
+        </div>
+        <div class="skill rv">
+          <span class="ic" style="background:var(--leaf)" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v12H4z"/><path d="M9 7V5h6v2"/><path d="M4 12h16"/></svg>
+          </span>
+          <div><h3>Real client work</h3><p>Deliver real client projects and learn by doing, alongside Japanese partner companies.</p></div>
+        </div>
+        <div class="skill rv">
+          <span class="ic" style="background:var(--forest)" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f7c600" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c3-1 4-4 4-4l6-6c1.5-1.5 4-2 5-1-0.5 1.5 0 3.5-1.5 5l-6 6s-3 1-4 4"/><circle cx="15" cy="9" r="1.2"/></svg>
+          </span>
+          <div><h3>Starting up</h3><p>Business planning, customer interviews, prototypes and landing your first customer.</p></div>
+        </div>
+        <div class="skill rv">
+          <span class="ic" style="background:var(--sun-deep)" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 4.5a3 3 0 0 1 0 6M21 20c0-2.6-1.7-4.9-4-5.7"/></svg>
+          </span>
+          <div><h3>More tracks to come</h3><p>Each partner company teaches its own field. New tracks will be added as partners join.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section class="promise">
+    <div class="wrap">
+      <span class="kicker">Our promise</span>
+      <h2 class="rv">Built for you to grow — and go.</h2>
+      <div class="row">
+        <div class="pill rv"><b>A real job</b><p>You are employed and paid monthly while you learn — for up to three years, with pay rising every year.</p></div>
+        <div class="pill rv"><b>Clear goals every year</b><p>Your contract is renewed each year. The goals are written down from day one, so you always know what “good” looks like.</p></div>
+        <div class="pill rv"><b>The goal is your freedom</b><p>This is not a place to stay forever. Success means you graduate and become independent. If you stay, it is a paid leader role by invitation — there is no unpaid way to stay.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FIT -->
+  <section class="fit" style="padding-top:0">
+    <div class="wrap">
+      <span class="kicker">Is this for you?</span>
+      <h2 class="rv">You'll love it here if you…</h2>
+      <ul>
+        <li class="rv">want to start your own business one day</li>
+        <li class="rv">are curious about AI and video</li>
+        <li class="rv">learn fast by doing real work</li>
+        <li class="rv">are ready to commit to a 3-year journey</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" style="padding-top:0">
+    <div class="wrap">
+      <span class="kicker">Questions</span>
+      <h2 class="rv">Good to know</h2>
+      <details><summary>Is this a paid job?</summary><p>Yes. You are employed by the program's company in Rwanda and receive a monthly salary during your time in the program. The planned salary is about RWF 140,000 a month in Year 1, rising to about RWF 163,000 in Year 2 and RWF 186,000 in Year 3. Final terms will be in your contract.</p></details>
+      <details><summary>How are apprentices selected?</summary><p>Through the 3-day AI Startup Bootcamp. We look at how you think, learn and work with others — not only at your CV.</p></details>
+      <details><summary>Can I stay after 3 years?</summary><p>The standard path is to graduate. A small number of graduates may be invited to stay as leaders whose job is to help the next group launch their businesses.</p></details>
+      <details><summary>Do I have to start a business?</summary><p>Going independent is the main goal, and we support it strongly. If you choose a job instead, we help you find one with your experience and a reference letter.</p></details>
+      <details><summary>What happens each year?</summary><p>Your contract is renewed once a year. We review your progress against goals written in your contract from day one. If the goals are not met, the program ends at that point.</p></details>
+    </div>
+  </section>
+
+  <!-- APPLY -->
+  <section class="apply" id="apply">
+    <svg class="sun2" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="96" fill="#f7c600"/></svg>
+    <div class="wrap">
+      <span class="kicker" style="color:var(--sun)">Apply</span>
+      <h2>Your business starts with three days.</h2>
+      <p class="sub">Apply for the next AI Startup Bootcamp. Applications open soon.</p>
+      <button class="btn btn-sun" id="applyBtn" type="button">Apply for the bootcamp <span class="arrow" aria-hidden="true">→</span></button>
+      <p class="note" id="applyNote" role="status" aria-live="polite"></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Launch Track Rwanda (working name) — a graduate apprenticeship with Japanese partner companies.</p>
+    <p>Draft concept for discussion. Planned estimates, not an offer. Name, schedule and terms are not final. Images are AI-generated for illustration.</p>
+  </div>
+</footer>
+
+<div class="mcta" id="mcta"><a class="btn btn-sun" href="#apply">Apply now <span class="arrow" aria-hidden="true">→</span></a></div>
+
+<script>
+// sun rays (16, abstract)
+(function(){
+  var g=document.querySelector('.sun .rays'),ray=document.getElementById('ray');
+  for(var i=1;i<16;i++){var c=ray.cloneNode(true);c.removeAttribute('id');c.setAttribute('transform','rotate('+(i*22.5)+' 100 100)');g.appendChild(c);}
+})();
+
+// reveal
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+// timeline progress + active steps
+var track=document.getElementById('track'),steps=track.querySelectorAll('.step');
+var mcta=document.getElementById('mcta'),hero=document.querySelector('.hero'),apply=document.getElementById('apply');
+function onScroll(){
+  var vh=innerHeight,r=track.getBoundingClientRect(),mark=vh*0.6;
+  var h=Math.max(0,Math.min(r.height-20,mark-r.top));
+  track.style.setProperty('--fill',h+'px');
+  steps.forEach(function(s){s.classList.toggle('on',s.getBoundingClientRect().top<mark)});
+  var heroGone=hero.getBoundingClientRect().bottom<0,applyIn=apply.getBoundingClientRect().top<vh;
+  mcta.classList.toggle('show',heroGone&&!applyIn);
+}
+addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+
+// dummy apply
+document.getElementById('applyBtn').addEventListener('click',function(){
+  var n=document.getElementById('applyNote');
+  n.textContent='Thanks for your interest! Applications are not open yet — this is a preview.';
+  n.classList.add('show');
+});
+</script>
+</body>
+</html>
