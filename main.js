@@ -1,8 +1,8 @@
 (function () {
   var root = document.documentElement;
   var titles = {
-    en: "Sho Jikumaru — AI operations for government | replus asia ltd.",
-    ja: "軸丸 翔 — 政府の現場でAIを回す | replus asia ltd."
+    en: "replus asia × Rwanda — AI operations for government | replus asia ltd.",
+    ja: "replus asia × Rwanda — 政府の現場でAIを回す | replus asia ltd."
   };
   function setLang(lang) {
     if (lang !== "en" && lang !== "ja") lang = "en";
