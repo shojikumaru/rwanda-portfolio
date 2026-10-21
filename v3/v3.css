@@ -8,10 +8,10 @@
 .behind-list li{border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;background:#fff}
 .behind-list b{display:block;margin-bottom:6px;font-size:16px}
 .behind-list li>span{color:var(--muted);font-size:14px}
-.journey{list-style:none;padding:0;margin:0 0 36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:j}
+.journey{list-style:none;padding:0;margin:0 0 36px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;counter-reset:j}
 .journey li{position:relative;border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--on-dark-muted)}
 .journey li b{display:block;color:var(--on-dark);font-size:15px;margin-bottom:2px}
-.journey li:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:14px}
+.journey li:not(:last-child)::after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:14px}
 .journey .j-now{border-color:var(--gold)}
 .journey .j-now b{color:var(--gold)}
 .skill-wide{grid-column:1/-1}
@@ -19,7 +19,7 @@
 .chain>span{border-radius:999px;padding:4px 12px;background:rgba(255,255,255,.06);color:var(--on-dark)}
 .chain .c-a{background:rgba(233,184,114,.16);color:var(--gold)}
 .chain .c-r{background:rgba(46,111,106,.35)}
-.chain i{font-style:normal;color:var(--gold)}
+.chain .c-a::before,.chain .c-r::before{content:"→ ";color:var(--gold)}
 .ad-band{margin:28px 0 0;padding:16px 20px;border-left:3px solid var(--gold);background:rgba(255,255,255,.04);border-radius:0 12px 12px 0;color:var(--on-dark-muted);font-size:15px}
 .ad-band b{color:var(--gold);margin-right:12px}
 .ad-band a{color:var(--gold)}
