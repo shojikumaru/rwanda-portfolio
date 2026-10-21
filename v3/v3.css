@@ -1,0 +1,33 @@
+/* v3 additions */
+.h2-sm{font-size:clamp(22px,2.6vw,30px)!important;margin-bottom:24px}
+.sec-logos{padding-top:56px;padding-bottom:56px}
+.behind{margin-top:48px}
+.behind-title{margin:0 0 6px;font-size:20px}
+.behind-sub{margin:0 0 18px;color:var(--muted);font-size:15px}
+.behind-list{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.behind-list li{border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;background:#fff}
+.behind-list b{display:block;margin-bottom:6px;font-size:16px}
+.behind-list li>span{color:var(--muted);font-size:14px}
+.journey{list-style:none;padding:0;margin:0 0 36px;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;counter-reset:j}
+.journey li{position:relative;border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 16px;font-size:13px;color:var(--on-dark-muted)}
+.journey li b{display:block;color:var(--on-dark);font-size:15px;margin-bottom:2px}
+.journey li:not(:last-child)::after{content:"→";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:14px}
+.journey .j-now{border-color:var(--gold)}
+.journey .j-now b{color:var(--gold)}
+.skill-wide{grid-column:1/-1}
+.chain{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 0 14px;font-size:13px}
+.chain>span{border-radius:999px;padding:4px 12px;background:rgba(255,255,255,.06);color:var(--on-dark)}
+.chain .c-a{background:rgba(233,184,114,.16);color:var(--gold)}
+.chain .c-r{background:rgba(46,111,106,.35)}
+.chain i{font-style:normal;color:var(--gold)}
+.ad-band{margin:28px 0 0;padding:16px 20px;border-left:3px solid var(--gold);background:rgba(255,255,255,.04);border-radius:0 12px 12px 0;color:var(--on-dark-muted);font-size:15px}
+.ad-band b{color:var(--gold);margin-right:12px}
+.ad-band a{color:var(--gold)}
+.port{margin:0 0 32px;border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:20px 24px}
+.port-title{margin:0 0 12px;color:var(--gold);font-weight:600}
+.port ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:8px 24px}
+.port li{font-size:15px;color:var(--on-dark-muted)}
+.port li b{color:var(--on-dark);font-weight:600}
+.port li i{font-style:normal;color:var(--gold);margin:0 8px}
+@media (max-width:980px){.behind-list{grid-template-columns:1fr}.journey{grid-template-columns:1fr 1fr}.journey li::after{display:none}.port ul{grid-template-columns:1fr}}
+@media (max-width:640px){.journey{grid-template-columns:1fr}.chain{font-size:12px}}
