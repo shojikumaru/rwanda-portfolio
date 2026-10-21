@@ -18,6 +18,7 @@
 <header class="nav">
   <a class="brand" href="#top"><span class="dot"></span>replus asia × Rwanda</a>
   <nav class="links" aria-label="Sections">
+    <a href="#skills"><span lang="en">Skills</span><span lang="ja">できること</span></a>
     <a href="#family"><span lang="en">AI Family</span><span lang="ja">AIファミリー</span></a>
     <a href="#oss"><span lang="en">Open source</span><span lang="ja">OSS</span></a>
     <a href="#work"><span lang="en">Work</span><span lang="ja">制作実績</span></a>
@@ -131,6 +132,89 @@
   </div>
 </section>
 
+<!-- 2 SKILLS -->
+<section class="sec sec-dark" id="skills">
+  <div class="wrap">
+    <p class="kicker">02 · <span lang="en">What I can do</span><span lang="ja">私ができること</span></p>
+    <h2><span lang="en">Built, shipped and running — not just tried.</span><span lang="ja">試したことではなく、作って動かしていること。</span></h2>
+    <p class="sub"><span lang="en">I run 24 AI agents in parallel across local machines (MacBook Pro, Mac mini) and cloud VPS, using up to 40 billion tokens a week. I have tested close to 400 LLMs, including local models, and build with the dozen or so that proved reliable in real work — agent-driven development.</span><span lang="ja">ローカル（MacBook Pro・Mac mini）とクラウドのVPSを組み合わせ、24体のAIエージェントを並行運用しています。使用量は最大で週400億トークン。ローカルLLMを含め約400種類のLLMを検証し、実務で使えると判断した十数種類を使い分けて、エージェント駆動開発を行っています。</span></p>
+    <ul class="skill-stats">
+      <li><b>24</b><span lang="en">AI agents in parallel</span><span lang="ja">並行運用するAIエージェント</span></li>
+      <li><b>40B</b><span lang="en">tokens a week, at peak</span><span lang="ja">トークン／週（最大）</span></li>
+      <li><b>~400</b><span lang="en">LLMs tested</span><span lang="ja">検証したLLM</span></li>
+      <li><b>6</b><span lang="en">PRs merged into major OSS</span><span lang="ja">大型OSSにマージされたPR</span></li>
+    </ul>
+    <div class="skill-grid">
+      <div class="skill">
+        <h3><span lang="en">Public track record</span><span lang="ja">公開実績</span></h3>
+        <ul>
+          <li><span lang="en">Open-source contributions: 5 PRs merged into <a href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Ashojikumaru+is%3Amerged" target="_blank" rel="noopener">OpenClaw</a> (~390k stars) and 1 into AIRI (~50k stars)</span><span lang="ja">OSS貢献：<a href="https://github.com/openclaw/openclaw/pulls?q=is%3Apr+author%3Ashojikumaru+is%3Amerged" target="_blank" rel="noopener">OpenClaw</a>（約39万スター）に5本、AIRI（約5万スター）に1本のPRがマージ</span></li>
+          <li><span lang="en">Published on npm: meetmate, sitter, context-kit, errmeter, persona-engine</span><span lang="ja">npmで公開：meetmate、sitter、context-kit、errmeter、persona-engine</span></li>
+          <li><span lang="en">Published on PyPI: <a href="https://pypi.org/project/caty-gateway/" target="_blank" rel="noopener">caty-gateway</a></span><span lang="ja">PyPIで公開：<a href="https://pypi.org/project/caty-gateway/" target="_blank" rel="noopener">caty-gateway</a></span></li>
+          <li><span lang="en">Documentation in four languages: English, Japanese, Chinese, Thai</span><span lang="ja">READMEは英・日・中・タイの4言語で公開</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><span lang="en">Generative &amp; voice AI</span><span lang="ja">生成AI・音声AI</span></h3>
+        <ul>
+          <li><span lang="en"><a href="https://github.com/caty-ai/meetmate" target="_blank" rel="noopener">meetmate</a>: AI agents join Google Meet, Zoom and Discord as voice participants</span><span lang="ja"><a href="https://github.com/caty-ai/meetmate" target="_blank" rel="noopener">meetmate</a>：AIエージェントがGoogle Meet・Zoom・Discordに声で参加</span></li>
+          <li><span lang="en">Live voice support AI for our own customers, in production (LiveKit + Gemini Live + knowledge search)</span><span lang="ja">LiveKitで顧客をリアルタイム支援する音声サポートAIを本番運用（Gemini Live＋ナレッジ検索）</span></li>
+          <li><span lang="en">AI phone calls: Twilio outbound, speech-to-text → LLM → Fish Audio, with barge-in and call summaries to Slack</span><span lang="ja">AI電話：Twilioで発信し、音声認識→LLM→Fish Audioで会話。割り込み対応・通話要約をSlackへ</span></li>
+          <li><span lang="en">Voice gateway: an API relay and account layer that keeps Soniox and Fish Audio keys off the device (Caty Cloud)</span><span lang="ja">音声ゲートウェイ：Soniox・Fish Audioの鍵を端末に置かないAPI中継と認証基盤（Caty Cloud）</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><span lang="en">Apps &amp; devices (Caty series)</span><span lang="ja">アプリ・デバイス（Catyシリーズ）</span></h3>
+        <ul>
+          <li><span lang="en">iOS: <a href="https://caty.talk" target="_blank" rel="noopener">CatyPhone</a>, an app to call your own AI agent</span><span lang="ja">iOS：<a href="https://caty.talk" target="_blank" rel="noopener">CatyPhone</a>（自分のAIに電話できるアプリ）</span></li>
+          <li><span lang="en">macOS: CatyPTT, a menu-bar push-to-talk client (signed and notarized)</span><span lang="ja">macOS：CatyPTT（メニューバー常駐のプッシュトゥトーク、公証済み配布）</span></li>
+          <li><span lang="en">Apple Watch: CatyWatch</span><span lang="ja">Apple Watch：CatyWatch</span></li>
+          <li><span lang="en">ESP32: firmware for a dedicated device you can talk to the AI with</span><span lang="ja">ESP32：AIと話せる専用端末のファームウェア</span></li>
+          <li><span lang="en">Cross-device link: caty-gateway connects your phone to the AI on your home computer over your own private network</span><span lang="ja">端末間連携：自分だけのプライベート網で、スマホと自宅PCのAIをつなぐcaty-gateway</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><span lang="en">Advertising technology</span><span lang="ja">広告テクノロジー</span></h3>
+        <ul>
+          <li><span lang="en"><a href="https://bot-cut.tokyo" target="_blank" rel="noopener">BotCut</a>: a short-URL service that filters fraudulent clicks — fingerprinting, conditional redirects, subscription billing, plus a WordPress plugin</span><span lang="ja"><a href="https://bot-cut.tokyo" target="_blank" rel="noopener">BotCut</a>：不正クリックを除外する短縮URL。指紋判定・条件分岐・サブスク課金、WordPress版も</span></li>
+          <li><span lang="en">Meta ads automation: store → audit &amp; propose → approve → execute</span><span lang="ja">Meta広告の運用自動化基盤：蓄積→監査・提案→承認→実行</span></li>
+          <li><span lang="en">Creative reporting sheet: ROAS judgement, winning audiences and placements</span><span lang="ja">クリエイティブ自動集計シート（ROAS判定・勝ち層・配置分析）</span></li>
+          <li><span lang="en">A monitor that correlates Meta app updates with outages</span><span lang="ja">Metaのアプリ更新と障害を突き合わせる監視ツール</span></li>
+          <li><span lang="en">An in-house Meta ads certification built from real consulting data (course and exam bank)</span><span lang="ja">実データから作ったMeta広告の社内資格制度（講座・試験問題）</span></li>
+          <li><span lang="en">AI screening: an AI interviewer for hiring (in design)</span><span lang="ja">AI審査：AIが面接官を務める採用審査（設計中）</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><span lang="en">Video, 3D &amp; 2.5D</span><span lang="ja">映像・3D・2.5D</span></h3>
+        <ul>
+          <li><span lang="en">Automated course-video line: script → AI voice → character capture → render → scored by two AI models</span><span lang="ja">講座動画の自動制作ライン：台本→AI音声→キャラ撮影→書き出し→AI2モデルで採点</span></li>
+          <li><span lang="en">Caty Stage: brings a single illustration to life like Live2D (16 reactions, 18 poses, lip sync)</span><span lang="ja">Caty Stage：イラスト1枚をLive2Dのように動かす（リアクション16種・ポーズ18種・口パク）</span></li>
+          <li><span lang="en">Auto-splits an illustration into a rig-ready layered PSD</span><span lang="ja">イラストを動かせるレイヤーPSDに自動分解</span></li>
+          <li><span lang="en"><a href="https://github.com/shojikumaru/meet-telop-kit" target="_blank" rel="noopener">meet-telop-kit</a>: interview recording → YouTube-style captioned ad cut</span><span lang="ja"><a href="https://github.com/shojikumaru/meet-telop-kit" target="_blank" rel="noopener">meet-telop-kit</a>：インタビュー録画→YouTube風テロップ広告の自動編集</span></li>
+          <li><span lang="en">Ad creative, music videos, YouTube courses, editing, Blender 3D</span><span lang="ja">広告クリエイティブ、MV、YouTube講座、動画編集、Blenderでの3D</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><span lang="en">AI agent infrastructure</span><span lang="ja">AIエージェント基盤</span></h3>
+        <ul>
+          <li><span lang="en"><a href="https://github.com/caty-ai/x-collector" target="_blank" rel="noopener">x-collector</a>: AI news from 7 platform families, served through an MCP server</span><span lang="ja"><a href="https://github.com/caty-ai/x-collector" target="_blank" rel="noopener">x-collector</a>：7系統のサービスからAIニュースを集め、MCPサーバーで提供</span></li>
+          <li><span lang="en">Nightly autonomous maintenance, a protocol for many AIs developing in parallel, shared memory, self-growth loops</span><span lang="ja">夜間自律保守、複数AIの並行開発プロトコル、共有記憶、自己成長ループ</span></li>
+          <li><span lang="en">ai-usage-meter: measures token use and equivalent cost of AI coding agents</span><span lang="ja">ai-usage-meter：AIのトークン使用量・換算コストを計測</span></li>
+          <li><span lang="en">Custom APIs and MCP servers; Supabase integration</span><span lang="ja">独自API・MCPサーバー開発、Supabase連携</span></li>
+        </ul>
+      </div>
+      <div class="skill">
+        <h3><span lang="en">Data, consulting &amp; operations</span><span lang="ja">データ・コンサル・経営実務</span></h3>
+        <ul>
+          <li><span lang="en">Statistical analysis of about ¥8B a year (2026 proj.) in ad spend data; BigQuery, Bright Data; database design</span><span lang="ja">年約80億円（2026年見込み）の広告費データを統計で分析。BigQuery・Bright Data、DB設計</span></li>
+          <li><span lang="en">AI consulting, from adoption design to operation; landing-page copy that converts</span><span lang="ja">AI導入コンサル（設計から運用まで）、勝てるLPのライティング</span></li>
+          <li><span lang="en">Back-office automation: bank statements → monthly cash-flow report, bonus calculation, staff AI-skills assessment</span><span lang="ja">銀行明細から月次資金繰り表を自動作成、賞与計算、社員向けAI活用診断</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CLIENT VOICES -->
 <section class="sec sec-soft" id="voices">
   <div class="wrap">
@@ -172,7 +256,7 @@
 <!-- 2 AI FAMILY -->
 <section class="sec sec-dark" id="family">
   <div class="wrap">
-    <p class="kicker">02 · <span lang="en">The AI Family</span><span lang="ja">AIファミリー</span></p>
+    <p class="kicker">03 · <span lang="en">The AI Family</span><span lang="ja">AIファミリー</span></p>
     <h2><span lang="en">One leader runs 20+ AI agents — every day, in production.</span><span lang="ja">経営者ひとりが、20体超のAIエージェントを毎日本番で動かしています。</span></h2>
     <div class="cards-3">
       <article class="feat">
@@ -197,7 +281,7 @@
 <!-- 3 STATEFUL AI / OSS -->
 <section class="sec" id="oss">
   <div class="wrap">
-    <p class="kicker">03 · <span lang="en">Stateful AI</span><span lang="ja">ステートフルAI</span></p>
+    <p class="kicker">04 · <span lang="en">Stateful AI</span><span lang="ja">ステートフルAI</span></p>
     <h2><span lang="en">AI that remembers — and carries the history forward.</span><span lang="ja">記憶と経緯を持ち越すAI。</span></h2>
     <p class="sub"><span lang="en">Most AI forgets everything when the chat ends. Ours keeps decisions, context and lessons — so a team of AI staff can pick up tomorrow where it stopped today. We publish the building blocks as open source (MIT).</span><span lang="ja">多くのAIは会話が終わると全部忘れます。私たちのAIは、決めたこと・文脈・学びを持ち越すので、AIの職員チームが「昨日の続き」から仕事を始められます。その部品はオープンソース（MIT）で公開しています。</span></p>
     <div class="cards">
@@ -232,7 +316,7 @@
 <!-- 4 PRODUCTS -->
 <section class="sec sec-soft" id="products">
   <div class="wrap">
-    <p class="kicker">04 · <span lang="en">Products</span><span lang="ja">プロダクト</span></p>
+    <p class="kicker">05 · <span lang="en">Products</span><span lang="ja">プロダクト</span></p>
     <h2><span lang="en">Talk to your AI — by phone and in meetings.</span><span lang="ja">電話でも、会議でも、AIと話せる。</span></h2>
     <div class="grid-2 products">
       <a class="prod" href="https://caty.talk" target="_blank" rel="noopener">
@@ -253,7 +337,7 @@
 <!-- 5 WORK -->
 <section class="sec" id="work">
   <div class="wrap">
-    <p class="kicker">05 · <span lang="en">Selected work</span><span lang="ja">制作実績</span></p>
+    <p class="kicker">06 · <span lang="en">Selected work</span><span lang="ja">制作実績</span></p>
     <h2><span lang="en">Made with the AI Family.</span><span lang="ja">AIファミリーと一緒に作ったもの。</span></h2>
     <div class="cards cards-2x2">
       <article class="card">
@@ -285,7 +369,7 @@
 <!-- 6 RWANDA -->
 <section class="sec sec-dark" id="rwanda">
   <div class="wrap">
-    <p class="kicker">06 · <span lang="en">What we can do in Rwanda</span><span lang="ja">ルワンダでできること</span></p>
+    <p class="kicker">07 · <span lang="en">What we can do in Rwanda</span><span lang="ja">ルワンダでできること</span></p>
     <h2><span lang="en">Four ways to start — small, measurable, in-country.</span><span lang="ja">小さく始めて、数字で確かめる。4つの入り口。</span></h2>
     <div class="offers">
       <article class="offer">
@@ -333,7 +417,7 @@
 <!-- 7 CONTACT -->
 <section class="sec contact" id="contact">
   <div class="wrap contact-inner">
-    <p class="kicker">07 · <span lang="en">Contact</span><span lang="ja">お問い合わせ</span></p>
+    <p class="kicker">08 · <span lang="en">Contact</span><span lang="ja">お問い合わせ</span></p>
     <h2><span lang="en">Let's start with one workflow.</span><span lang="ja">まずは、業務ひとつから。</span></h2>
     <p class="sub"><span lang="en">Tell us which process you'd like AI to take on. We'll reply with a pilot outline.</span><span lang="ja">AIに任せてみたい業務を教えてください。パイロットの概要をお返しします。</span></p>
     <a class="btn btn-big" href="https://re-plus.asia/contact" target="_blank" rel="noopener"><span lang="en">Contact replus asia ltd.</span><span lang="ja">replus asia ltd. に問い合わせる</span></a>
