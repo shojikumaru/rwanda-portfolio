@@ -1,0 +1,1650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>African Mirror — Kigali → GRAMMY | Front Row Fan Club</title>
+<meta name="description" content="African Mirror is a kids' dance crew from Kigali, Rwanda — about 60 dancers aged 5 to 16. Join the Front Row fan club for free and help light the road to the GRAMMYs.">
+<meta name="theme-color" content="#07070a">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2307070a'/%3E%3Cpath d='M5 15 16 4l11 11z' fill='%23f5b83d'/%3E%3Cpath d='M5 18h22L16 28z' fill='%23f5b83d' opacity='.45'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@500&family=Noto+Sans+JP:wght@400;700;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* African Mirror — Front Row. Night stadium, one gold road. */
+:root {
+  --ink: #07070a;
+  --night: #101119;
+  --night-2: #171823;
+  --line: rgba(244, 241, 234, .12);
+  --text: #f4f1ea;
+  --mute: rgba(244, 241, 234, .66);
+  --gold: #f5b83d;
+  --gold-hi: #ffd77a;
+  --ember: #ff6b2c;
+  --sky: #3fb6e8;
+  --display: "Anton", "Noto Sans JP", Impact, sans-serif;
+  --ui: "Space Grotesk", "Noto Sans JP", system-ui, sans-serif;
+  --wrap: min(1160px, 100% - 48px);
+  --ease: cubic-bezier(.32, .72, 0, 1);
+  --hdr-h: 64px;
+}
+html:lang(ja) { --ui: "Noto Sans JP", "Space Grotesk", system-ui, sans-serif; }
+/* Turkish: Anton covers latin-ext (ç ğ ı İ ö ş ü); Oswald and Impact catch any missing glyph */
+html:lang(tr) { --display: "Anton", "Oswald", Impact, "Arial Narrow Bold", "Arial Narrow", sans-serif; }
+html:lang(tr) .road__title, html:lang(tr) .stage__title, html:lang(tr) .join__title, html:lang(tr) .final__title { line-height: 1.04; }
+html:lang(tr) .road__title, html:lang(tr) .stage__title, html:lang(tr) .join__title, html:lang(tr) .final__title,
+html:lang(tr) .engine__title, html:lang(tr) .partners__title, html:lang(tr) .crew__statement,
+html:lang(tr) .stop__name, html:lang(tr) .lane__h, html:lang(tr) .engine__h { overflow-wrap: break-word; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--hdr-h) + 16px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--ink); color: var(--text);
+  font: 400 17px/1.65 var(--ui); letter-spacing: .005em;
+  -webkit-font-smoothing: antialiased; overflow-x: clip;
+}
+html:lang(ja) body { line-height: 1.85; letter-spacing: .02em; font-size: 16px; word-break: auto-phrase; line-break: strict; }
+img, svg { display: block; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+.wrap { width: var(--wrap); margin-inline: auto; }
+
+/* buttons */
+.btn {
+  --bg: transparent; display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+  min-height: 54px; padding: 0 24px; border-radius: 999px; border: 1px solid transparent;
+  font: 700 16px/1.2 var(--ui); letter-spacing: .02em; text-decoration: none; cursor: pointer;
+  background: var(--bg); color: var(--text);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+}
+.btn__arw { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s var(--ease); }
+.btn:hover .btn__arw { transform: translateX(3px); }
+.btn--gold {
+  --bg: linear-gradient(180deg, var(--gold-hi), var(--gold) 55%, #e09a1c);
+  color: #1b1204; box-shadow: 0 0 0 1px rgba(255,215,122,.4), 0 10px 40px -8px rgba(245,184,61,.6);
+}
+.btn--gold:hover { transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(255,215,122,.6), 0 16px 50px -8px rgba(245,184,61,.8); }
+.btn--gold:active { transform: translateY(0); }
+.btn--ghost { border-color: rgba(244,241,234,.28); }
+.btn--ghost:hover { border-color: var(--gold); color: var(--gold-hi); }
+.btn--sm { min-height: 40px; padding: 0 16px; font-size: 14px; }
+.btn--block { width: 100%; }
+
+/* header */
+.hdr {
+  position: fixed; inset: 0 0 auto 0; z-index: 50; height: var(--hdr-h);
+  display: flex; align-items: center; gap: 24px; padding: 0 max(20px, calc((100% - 1160px) / 2));
+  transition: background-color .3s var(--ease), backdrop-filter .3s var(--ease), border-color .3s var(--ease); border-bottom: 1px solid transparent;
+}
+.hdr.is-solid { background: rgba(7,7,10,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-color: var(--line); }
+.hdr__brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.hdr__mark { position: relative; width: 22px; height: 22px; }
+.hdr__mark i { position: absolute; left: 0; right: 0; height: 10px; border-radius: 2px; }
+.hdr__mark i:first-child { top: 0; background: var(--gold); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+.hdr__mark i:last-child { bottom: 0; background: linear-gradient(180deg, rgba(245,184,61,.5), transparent); clip-path: polygon(0 0, 50% 100%, 100% 0); }
+.hdr__name { font: 400 18px/1 var(--display); letter-spacing: .08em; }
+.hdr__nav { display: flex; gap: 24px; margin-left: auto; }
+.hdr__nav a { text-decoration: none; font-size: 14px; color: var(--mute); transition: color .3s var(--ease); }
+.hdr__nav a:hover { color: var(--text); }
+.hdr__right { display: flex; align-items: center; gap: 12px; }
+.lang { display: flex; padding: 3px; border: 1px solid var(--line); border-radius: 999px; }
+.lang button {
+  min-width: 44px; min-height: 32px; padding: 0 10px; border: 0; border-radius: 999px; cursor: pointer;
+  background: transparent; color: var(--mute); font: 500 12px/1 var(--ui); letter-spacing: .04em;
+}
+.lang button[aria-pressed="true"] { background: var(--text); color: var(--ink); }
+
+/* eyebrow */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 12px; margin: 0 0 24px;
+  font: 500 13px/1 var(--ui); letter-spacing: .22em; text-transform: uppercase; color: var(--gold);
+}
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+html:lang(ja) .eyebrow { letter-spacing: .14em; }
+
+/* HERO */
+.hero {
+  position: relative; min-height: 100svh; display: grid; place-items: center; overflow: hidden;
+  padding: calc(var(--hdr-h) + 40px) 0 90px; isolation: isolate;
+  background:
+    radial-gradient(120% 70% at 50% 108%, rgba(245,184,61,.22), transparent 60%),
+    radial-gradient(60% 50% at 50% 0%, rgba(63,182,232,.10), transparent 70%),
+    var(--ink);
+}
+.hero__beams { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -1; }
+.hero::after { /* stage floor */
+  content: ""; position: absolute; left: -10%; right: -10%; bottom: -1px; height: 26%; z-index: -1;
+  background: repeating-linear-gradient(90deg, rgba(245,184,61,.08) 0 1px, transparent 1px 64px), linear-gradient(180deg, transparent, rgba(7,7,10,.9));
+  transform: perspective(500px) rotateX(58deg); transform-origin: bottom;
+  mask-image: linear-gradient(180deg, transparent, #000 70%);
+}
+.hero__inner { width: var(--wrap); text-align: center; }
+.hero__kicker { display: inline-flex; align-items: center; gap: 12px; margin: 0 0 24px; font-size: 14px; color: var(--mute); letter-spacing: .06em; }
+.dot { width: 8px; height: 8px; border-radius: 50%; }
+.dot--sky { background: var(--sky); box-shadow: 0 0 0 4px rgba(63,182,232,.2), 0 0 18px var(--sky); animation: pulse 2.4s infinite; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 9px rgba(63,182,232,0), 0 0 18px var(--sky); } }
+.hero__title {
+  margin: 0; display: flex; align-items: center; justify-content: center; gap: clamp(12px, 2.4vw, 32px);
+  font: 400 clamp(64px, 11.6vw, 184px)/.86 var(--display); letter-spacing: .01em; text-transform: uppercase;
+}
+.hero__from { color: var(--text); }
+.hero__to {
+  background: linear-gradient(180deg, #fff3cf 0%, var(--gold-hi) 30%, var(--gold) 60%, #c97c10 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 0 28px rgba(245,184,61,.45));
+}
+.hero__arrow svg { width: clamp(56px, 8vw, 120px); height: auto; fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 160; stroke-dashoffset: 160; animation: draw 1.2s .5s var(--ease) forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.hero__mirror { /* the mirror reflection */
+  display: flex; justify-content: center; gap: clamp(12px, 2.4vw, 32px); margin-top: 2px; height: clamp(26px, 4.4vw, 70px); overflow: hidden;
+  font: 400 clamp(64px, 11.6vw, 184px)/.86 var(--display); color: rgba(244,241,234,.5);
+  transform: scaleY(-1); mask-image: linear-gradient(0deg, rgba(0,0,0,.55), transparent 80%); -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,.55), transparent 80%);
+  user-select: none; pointer-events: none; align-items: flex-end;
+}
+.hero__mirror span:last-child { color: rgba(245,184,61,.55); }
+.hero__arrow--ghost { visibility: hidden; }
+.hero__lead { max-width: 640px; margin: 32px auto 0; font-size: clamp(17px, 1.6vw, 21px); color: var(--mute); text-wrap: balance; }
+.hero__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 40px; }
+.hero__scroll { position: absolute; bottom: 26px; left: 50%; width: 1px; height: 48px; background: var(--line); overflow: hidden; }
+.hero__scroll span { position: absolute; inset: 0; background: var(--gold); animation: drip 2s infinite var(--ease); transform-origin: top; }
+@keyframes drip { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); transform-origin: top; } 51% { transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+/* reveal */
+.rv-ready .rv { opacity: 0; transform: translateY(32px); filter: blur(8px); transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease); }
+.rv-ready .rv.in { opacity: 1; transform: none; filter: none; }
+
+/* CREW */
+.crew { padding: clamp(100px, 14vw, 180px) 0 clamp(80px, 10vw, 140px); background: linear-gradient(180deg, var(--ink), var(--night)); }
+.crew__statement { max-width: 980px; margin: 0; font: 700 clamp(28px, 4vw, 54px)/1.18 var(--ui); letter-spacing: -.015em; text-wrap: balance; }
+html:lang(ja) .crew__statement { font-weight: 900; line-height: 1.45; letter-spacing: 0; font-size: clamp(24px, 3.4vw, 44px); }
+.crew__facts { display: grid; grid-template-columns: repeat(3, 1fr); margin: clamp(56px, 7vw, 96px) 0 0; border-top: 1px solid var(--line); }
+.crew__facts > div { padding: 24px 0 0; }
+.crew__facts > div + div { padding-left: clamp(16px, 3vw, 40px); border-left: 1px solid var(--line); }
+.crew__facts dt { font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
+.crew__facts dd { margin: 10px 0 0; }
+.num { font: 400 clamp(52px, 8vw, 120px)/.9 var(--display); color: var(--gold); }
+.num--word { color: var(--text); font-size: clamp(36px, 5.4vw, 84px); }
+html:lang(ja) .crew__facts .num:not(.num--word) { font-family: var(--display); }
+.mentor { display: flex; gap: 24px; align-items: center; margin-top: clamp(56px, 7vw, 90px); padding: 24px; max-width: 620px; border: 1px solid var(--line); border-radius: 20px; background: rgba(255,255,255,.02); }
+.mentor__badge { flex: none; width: 72px; height: 72px; border-radius: 50%; display: grid; place-items: center; font: 400 26px/1 var(--display); color: var(--ink); background: conic-gradient(from 210deg, var(--gold-hi), var(--ember), var(--gold), var(--gold-hi)); }
+.mentor__role { margin: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
+.mentor__name { margin: 2px 0 4px; font: 400 30px/1.1 var(--display); letter-spacing: .03em; }
+.mentor__desc { margin: 0; color: var(--mute); font-size: 15px; }
+
+/* ROAD */
+.road { position: relative; padding: clamp(90px, 12vw, 160px) 0 clamp(90px, 12vw, 160px); background: var(--night); overflow: hidden; }
+.road::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 40% at 50% 100%, rgba(245,184,61,.14), transparent 70%); pointer-events: none; }
+.road__head { position: relative; }
+.road__title { margin: 0; font: 400 clamp(44px, 7vw, 104px)/.95 var(--display); text-transform: uppercase; letter-spacing: .005em; }
+html:lang(ja) .road__title { font: 900 clamp(32px, 5.2vw, 68px)/1.25 var(--ui); text-transform: none; }
+.road__note { max-width: 560px; margin: 24px 0 0; color: var(--mute); }
+.road__track { position: relative; width: var(--wrap); margin: clamp(60px, 8vw, 110px) auto 0; }
+.road__stops { position: relative; list-style: none; margin: 0; padding: 0; display: grid; gap: clamp(56px, 8vw, 110px); }
+.road__line { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.road__base { fill: none; stroke: rgba(244,241,234,.12); stroke-width: 2; stroke-dasharray: 2 10; stroke-linecap: round; }
+.road__lit { fill: none; stroke: var(--gold); stroke-width: 3; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(245,184,61,.9)) drop-shadow(0 0 18px rgba(245,184,61,.5)); }
+.stop { position: relative; display: grid; grid-template-columns: 1fr 1fr; align-items: center; }
+.stop__node {
+  position: absolute; left: 50%; top: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border-radius: 50%;
+  background: var(--night); border: 2px solid rgba(244,241,234,.3); transition: background-color .5s var(--ease), border-color .5s var(--ease), box-shadow .5s var(--ease); z-index: 1;
+}
+.stop.is-lit .stop__node { border-color: var(--gold-hi); background: var(--gold); box-shadow: 0 0 0 6px rgba(245,184,61,.18), 0 0 30px rgba(245,184,61,.9); }
+.stop.is-now .stop__node { border-color: var(--sky); background: var(--sky); box-shadow: 0 0 0 7px rgba(63,182,232,.2), 0 0 30px var(--sky); }
+.stop__card {
+  grid-column: 1; justify-self: end; width: min(440px, 100%); margin-right: clamp(40px, 6vw, 80px); text-align: right;
+  opacity: .38; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+.stop:nth-child(even) .stop__card { grid-column: 2; justify-self: start; margin: 0 0 0 clamp(40px, 6vw, 80px); text-align: left; }
+.stop.is-lit .stop__card, .stop.is-now .stop__card { opacity: 1; transform: none; }
+.stop__no { margin: 0 0 6px; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
+.stop.is-now .stop__no { color: var(--sky); }
+.stop__name { margin: 0; font: 400 clamp(34px, 4.6vw, 64px)/1 var(--display); letter-spacing: .01em; }
+.stop__text { margin: 10px 0 0; color: var(--mute); }
+.stop__seat {
+  display: inline-flex; margin-top: 16px; padding: 7px 14px; border: 1px dashed rgba(245,184,61,.55); border-radius: 999px;
+  font-size: 13px; color: var(--gold-hi); text-decoration: none; letter-spacing: .04em; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.stop__seat:hover { background: rgba(245,184,61,.12); }
+.stop--goal { grid-template-columns: 1fr; padding-top: 30px; }
+.stop--goal .stop__card, .stop--goal:nth-child(even) .stop__card { grid-column: 1; justify-self: center; text-align: center; margin: 0; padding-top: 40px; width: min(640px, 100%); }
+.stop--goal .stop__node { top: 30px; }
+.stop--goal .stop__name {
+  font-size: clamp(64px, 10vw, 150px);
+  background: linear-gradient(180deg, #fff3cf, var(--gold-hi) 35%, var(--gold) 65%, #c97c10); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stop--goal .stop__node { width: 34px; height: 34px; margin: -17px 0 0 -17px; clip-path: polygon(50% 0, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); border-radius: 0; border: 0; background: rgba(244,241,234,.3); }
+.stop--goal.is-lit .stop__node { background: var(--gold-hi); box-shadow: none; filter: drop-shadow(0 0 14px var(--gold)); }
+
+/* ENGINE */
+.engine { padding: clamp(90px, 12vw, 160px) 0; background: linear-gradient(180deg, var(--night), var(--ink)); }
+.engine__title { margin: 0; font: 700 clamp(32px, 4.8vw, 64px)/1.1 var(--ui); letter-spacing: -.02em; }
+html:lang(ja) .engine__title { font-weight: 900; letter-spacing: 0; line-height: 1.4; font-size: clamp(28px, 4vw, 52px); }
+.engine__title em { font-style: normal; color: var(--gold); }
+.engine__flow { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: clamp(50px, 7vw, 90px); counter-reset: s; }
+.engine__flow::before { content: ""; position: absolute; top: 27px; left: 28px; right: 28px; height: 2px; background: linear-gradient(90deg, var(--sky), var(--gold) 60%, var(--ember)); opacity: .6; }
+.engine__step { position: relative; padding-right: 22px; }
+.engine__n { position: relative; display: grid; place-items: center; width: 56px; height: 56px; border-radius: 50%; background: var(--ink); border: 2px solid var(--gold); font: 400 24px/1 var(--display); color: var(--gold); }
+.engine__step:first-child .engine__n { border-color: var(--sky); color: var(--sky); }
+.engine__h { margin: 24px 0 8px; font-weight: 700; font-size: 20px; }
+.engine__step p:last-child { margin: 0; color: var(--mute); font-size: 15px; }
+
+/* STAGE (Instagram gallery) */
+.stage { position: relative; padding: clamp(90px, 12vw, 150px) 0 clamp(70px, 9vw, 110px); background: #050507; overflow: hidden; isolation: isolate; }
+.stage__lights { position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    conic-gradient(from 160deg at 18% -10%, transparent 0 8deg, rgba(245,184,61,.16) 12deg, transparent 18deg 360deg),
+    conic-gradient(from 178deg at 50% -12%, transparent 0 6deg, rgba(255,215,122,.14) 11deg, transparent 17deg 360deg),
+    conic-gradient(from 196deg at 82% -10%, transparent 0 8deg, rgba(63,182,232,.13) 12deg, transparent 18deg 360deg),
+    radial-gradient(80% 40% at 50% 100%, rgba(245,184,61,.16), transparent 70%);
+}
+.stage__head { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: end; }
+.stage__title { margin: 0; font: 400 clamp(52px, 7.4vw, 112px)/.92 var(--display); text-transform: uppercase; }
+html:lang(ja) .stage__title { font: 900 clamp(32px, 4.6vw, 60px)/1.3 var(--ui); }
+.stage__text { margin: 0 0 24px; color: var(--mute); max-width: 440px; }
+.stage__rail {
+  display: grid; grid-auto-flow: column; grid-auto-columns: clamp(220px, 21vw, 290px); gap: 20px; align-items: start;
+  margin-top: clamp(44px, 6vw, 70px); padding: 40px max(24px, calc((100% - 1160px) / 2)) 34px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: max(24px, calc((100% - 1160px) / 2));
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; overscroll-behavior-x: contain;
+}
+.stage__rail::-webkit-scrollbar { display: none; }
+.reel {
+  position: relative; margin: 0; width: 100%; aspect-ratio: 9 / 16; border-radius: 18px; overflow: hidden; scroll-snap-align: start;
+  background: linear-gradient(160deg, #1b1c28, #0b0b10); box-shadow: 0 0 0 1px var(--line), 0 40px 80px -40px rgba(245,184,61,.35);
+}
+.reel__link { position: absolute; inset: 0; display: block; color: var(--text); text-decoration: none; }
+.reel__link img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.reel__link::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5,5,7,.35) 0%, transparent 22%, transparent 55%, rgba(5,5,7,.88) 100%); }
+.reel__link:hover img { transform: scale(1.05); }
+.reel__play {
+  position: absolute; z-index: 1; left: 50%; top: 46%; width: 66px; height: 66px; margin: -33px 0 0 -33px; border-radius: 50%;
+  display: grid; place-items: center; background: rgba(7,7,10,.4); border: 1.5px solid rgba(255,215,122,.9);
+  -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); transition: transform .3s var(--ease), background-color .3s var(--ease);
+}
+.reel__play svg { width: 24px; height: 24px; margin-left: 3px; fill: var(--gold-hi); }
+.reel__link:hover .reel__play, .reel__link:focus-visible .reel__play { transform: scale(1.1); background: var(--gold); }
+.reel__link:hover .reel__play svg, .reel__link:focus-visible .reel__play svg { fill: var(--ink); }
+.reel__no { position: absolute; z-index: 1; left: 14px; top: 12px; font: 400 32px/1 var(--display); text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+.reel__cta { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 62px; display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 700; }
+.reel__cta .ig { width: 18px; height: 18px; }
+.reel__here {
+  position: absolute; z-index: 2; left: 12px; right: 12px; bottom: 12px; height: 40px; border-radius: 999px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px; font: 700 13px/1 var(--ui); letter-spacing: .04em; color: var(--text);
+  background: rgba(7,7,10,.55); border: 1px solid rgba(244,241,234,.3); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease);
+}
+.reel__here svg { width: 14px; height: 14px; fill: currentColor; }
+.reel__here:hover { border-color: var(--gold); background: rgba(245,184,61,.2); }
+.reel.is-blocked .reel__here { display: none; }
+.reel.is-blocked .reel__cta { bottom: 16px; }
+.reel__embed { position: absolute; inset: 0; z-index: 3; display: none; overflow-y: auto; padding-top: 44px; background: #0b0b10; }
+.reel.is-playing .reel__embed { display: block; }
+.reel__embed iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.reel__back {
+  position: absolute; z-index: 4; right: 8px; top: 6px; height: 32px; padding: 0 12px; border-radius: 999px; cursor: pointer;
+  font: 700 12px/1 var(--ui); color: var(--text); background: rgba(7,7,10,.75); border: 1px solid rgba(244,241,234,.3);
+}
+/* Instagram profile card */
+.igp { display: grid; gap: 16px; padding: 24px; border-radius: 20px; border: 1px solid var(--line); background: rgba(255,255,255,.03); max-width: 420px; }
+.igp__id { display: flex; align-items: center; gap: 16px; text-decoration: none; color: var(--text); }
+.igp__ring { flex: none; width: 62px; height: 62px; border-radius: 50%; padding: 3px; background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
+.igp__ring img { display: block; width: 100%; height: 100%; border-radius: 50%; border: 2px solid var(--ink); object-fit: cover; }
+.igp__names { display: grid; gap: 2px; }
+.igp__handle { font-weight: 700; font-size: 17px; }
+.igp__name { font-size: 13px; color: var(--mute); letter-spacing: .06em; }
+.igp__stats { display: flex; gap: 32px; margin: 0; }
+.igp__stats div { display: flex; flex-direction: column-reverse; }
+.igp__stats dt { font-size: 12px; color: var(--mute); letter-spacing: .08em; }
+.igp__stats dd { margin: 0; font: 400 28px/1.1 var(--display); color: var(--gold); }
+.igp__asof { margin: -8px 0 0; font-size: 12px; color: var(--mute); }
+.setlist { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0; padding: 0; }
+.setlist button {
+  min-width: 44px; height: 36px; padding: 0 10px; border-radius: 8px; cursor: pointer;
+  font: 400 15px/1 var(--display); letter-spacing: .06em; color: var(--mute); background: transparent; border: 1px solid var(--line); transition: color .3s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+.setlist button:hover { color: var(--text); border-color: rgba(244,241,234,.35); }
+.setlist button[aria-current="true"] { color: var(--ink); background: var(--gold); border-color: var(--gold); box-shadow: 0 0 16px rgba(245,184,61,.6); }
+.stage__foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.stage__note { margin: 0; font-size: 13px; color: var(--mute); }
+.stage__nav { display: flex; gap: 10px; }
+.round {
+  display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; padding: 0; cursor: pointer;
+  background: rgba(255,255,255,.04); border: 1px solid rgba(244,241,234,.22); color: var(--text); transition: border-color .3s var(--ease), background-color .3s var(--ease), transform .3s var(--ease);
+}
+.round:hover { border-color: var(--gold); background: rgba(245,184,61,.1); }
+.round svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Instagram follow button */
+.btn--ig { --bg: linear-gradient(120deg, #feda75 0%, #fa7e1e 25%, #d62976 55%, #962fbf 80%, #4f5bd5 100%); color: #fff; box-shadow: 0 10px 34px -10px rgba(214,41,118,.7); }
+.btn--ig:hover { transform: translateY(-2px); box-shadow: 0 16px 44px -10px rgba(214,41,118,.9); }
+.ig { width: 20px; height: 20px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; }
+.ig .ig__dot { fill: currentColor; stroke: none; }
+.hero__more { display: inline-block; margin-top: 24px; font-size: 14px; color: var(--mute); text-decoration: none; letter-spacing: .06em; border-bottom: 1px solid rgba(244,241,234,.25); padding-bottom: 2px; }
+.hero__more:hover { color: var(--gold-hi); border-color: var(--gold); }
+.final__ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+/* after join */
+.after-join { padding: 20px; border-radius: 16px; border: 1px solid rgba(214,41,118,.45); background: linear-gradient(135deg, rgba(214,41,118,.12), rgba(79,91,213,.08)); display: grid; gap: 10px; }
+.after-join__k { margin: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: #ff8fc1; }
+.after-join__t { margin: 0 0 6px; font-size: 15px; }
+
+/* JOIN */
+.join { position: relative; padding: clamp(90px, 12vw, 160px) 0; background: radial-gradient(70% 60% at 25% 40%, rgba(245,184,61,.12), transparent 70%), var(--night); }
+.join__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+.join__stage { position: sticky; top: calc(var(--hdr-h) + 40px); display: grid; justify-items: center; gap: 16px; }
+.join__hint { margin: 0; font-size: 14px; color: var(--mute); }
+.join__title { margin: 0 0 24px; font: 400 clamp(40px, 5.4vw, 78px)/.98 var(--display); text-transform: uppercase; }
+html:lang(ja) .join__title { font: 900 clamp(28px, 3.6vw, 46px)/1.35 var(--ui); }
+.join__perks { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 10px; }
+.join__perks li { position: relative; padding-left: 28px; color: var(--mute); font-size: 15px; }
+.join__perks li::before { content: ""; position: absolute; left: 2px; top: .55em; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px var(--gold); }
+
+/* 3D card */
+.card3d { --rx: 0deg; --ry: 0deg; --mx: 50%; --my: 50%; width: min(460px, 100%); aspect-ratio: 1.586; perspective: 1200px; }
+.card3d__inner {
+  position: relative; width: 100%; height: 100%; transform-style: preserve-3d;
+  transform: rotateX(var(--rx)) rotateY(calc(var(--ry) + var(--flip, 0deg)));
+  transition: transform .9s var(--ease);
+}
+.card3d.is-tilting .card3d__inner { transition: transform .12s linear; }
+.card3d.is-flipping .card3d__inner { transition: transform .9s var(--ease); }
+.card3d[data-state="registered"] { --flip: 180deg; }
+.card3d__face {
+  position: absolute; inset: 0; border-radius: 22px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  padding: 7% 7.5%; display: flex; flex-direction: column;
+  background: radial-gradient(120% 90% at 0% 0%, #2a2b3a, #101119 55%, #07070a);
+  border: 1px solid rgba(255,215,122,.35);
+  box-shadow: 0 40px 80px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.12);
+}
+.card3d__back { transform: rotateY(180deg); justify-content: center; text-align: center; background: radial-gradient(120% 100% at 50% 110%, rgba(245,184,61,.35), #101119 55%, #07070a); }
+.card3d__holo {
+  position: absolute; inset: 0; pointer-events: none; mix-blend-mode: color-dodge; opacity: .4;
+  background:
+    radial-gradient(40% 50% at var(--mx) var(--my), rgba(255,255,255,.35), transparent 70%),
+    linear-gradient(115deg, transparent 20%, rgba(63,182,232,.35) 36%, rgba(245,184,61,.4) 48%, rgba(255,107,44,.35) 60%, transparent 76%);
+  background-size: 100% 100%, 250% 250%; background-position: 0 0, var(--mx) var(--my);
+}
+.card3d__top { position: relative; display: flex; justify-content: space-between; align-items: center; }
+.card3d__brand { font: 400 clamp(13px, 3.2vw, 17px)/1 var(--display); letter-spacing: .14em; }
+.card3d__tier { font: 700 clamp(9px, 2.2vw, 11px)/1 var(--ui); letter-spacing: .24em; color: var(--ink); background: var(--gold); padding: 6px 10px; border-radius: 999px; }
+.card3d__road { position: relative; margin-top: auto; }
+.card3d__road svg { width: 100%; height: auto; fill: none; stroke: var(--gold); stroke-width: 2; overflow: visible; filter: drop-shadow(0 0 4px rgba(245,184,61,.8)); }
+.card3d__road circle { fill: var(--gold-hi); stroke: none; }
+.card3d__road circle:first-of-type { fill: var(--sky); }
+.card3d__road span { position: absolute; bottom: -16px; font: 500 9px/1 var(--ui); letter-spacing: .2em; color: var(--mute); }
+.card3d__road span:last-child { right: 0; bottom: auto; top: -14px; color: var(--gold-hi); }
+.card3d__road span:first-of-type { left: 0; }
+.card3d__name {
+  position: relative; margin-top: auto; padding-top: 10%; font: 400 clamp(24px, 6.4vw, 38px)/1 var(--display); letter-spacing: .04em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 0 rgba(0,0,0,.6);
+}
+.card3d__name.is-empty, .card3d__back-name.is-empty { color: rgba(244,241,234,.28); }
+.card3d__meta { position: relative; display: flex; justify-content: space-between; margin-top: 8px; font: 500 clamp(9px, 2.2vw, 11px)/1 var(--ui); letter-spacing: .18em; text-transform: uppercase; color: var(--mute); }
+.card3d__back-k { margin: 0; font: 700 12px/1 var(--ui); letter-spacing: .24em; text-transform: uppercase; color: var(--gold); }
+.card3d__back-name { margin: 14px 0 10px; font: 400 clamp(30px, 8vw, 48px)/1 var(--display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card3d__back-t { margin: 0 auto; max-width: 30ch; font-size: clamp(12px, 3vw, 14px); line-height: 1.5; color: var(--mute); }
+.card3d__back-mark { position: relative; width: 26px; height: 26px; margin: 18px auto 0; }
+.card3d__back-mark i { position: absolute; left: 0; right: 0; height: 12px; }
+.card3d__back-mark i:first-child { top: 0; background: var(--gold); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
+.card3d__back-mark i:last-child { bottom: 0; background: rgba(245,184,61,.4); clip-path: polygon(0 0, 50% 100%, 100% 0); }
+
+/* form */
+.form { display: grid; gap: 18px; }
+.field { display: grid; gap: 8px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.field > label, .field legend { font-size: 14px; font-weight: 500; }
+.field legend { margin-bottom: 8px; padding: 0; }
+.field input[type="text"], .field input[type="email"] {
+  width: 100%; min-height: 52px; padding: 0 16px; border-radius: 12px; font: 400 16px/1.2 var(--ui); color: var(--text);
+  background: rgba(255,255,255,.04); border: 1px solid rgba(244,241,234,.2); transition: border-color .3s var(--ease), background-color .3s var(--ease);
+}
+.field input:focus { outline: none; border-color: var(--gold); background: rgba(245,184,61,.06); }
+.field input[aria-invalid="true"] { border-color: var(--ember); }
+.field__help { margin: 0; font-size: 13px; color: var(--mute); }
+.field--choice { display: flex; flex-wrap: wrap; gap: 8px; }
+.field--choice legend { width: 100%; }
+.field--choice label { position: relative; cursor: pointer; }
+.field--choice input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.field--choice span { display: inline-flex; align-items: center; min-height: 42px; padding: 0 16px; border-radius: 999px; border: 1px solid rgba(244,241,234,.22); font-size: 14px; transition: color .3s var(--ease), background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.field--choice input:checked + span { background: var(--text); color: var(--ink); border-color: var(--text); }
+.field--choice input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.check { display: flex; gap: 12px; align-items: flex-start; font-size: 14px; color: var(--mute); cursor: pointer; }
+.check input { flex: none; width: 20px; height: 20px; margin-top: 2px; accent-color: var(--gold); }
+.form__minor { margin: -6px 0 0; font-size: 13px; color: var(--mute); }
+.form__preview { margin: 0; padding: 10px 14px; border-radius: 10px; font-size: 13px; color: var(--gold-hi); background: rgba(245,184,61,.08); border: 1px dashed rgba(245,184,61,.4); }
+.form.is-done .form__preview { display: none; }
+.form__error { margin: 0; min-height: 0; font-size: 14px; color: #ff9a6e; }
+.form__error:empty { display: none; }
+.form__status { margin: 0; font-size: 14px; color: var(--gold-hi); }
+.form__status:empty { display: none; }
+.form__edit { justify-self: start; background: none; border: 0; padding: 4px 0; color: var(--mute); text-decoration: underline; font: inherit; font-size: 14px; cursor: pointer; }
+.form.is-done .field, .form.is-done .check, .form.is-done .form__minor, .form.is-done button[type="submit"] { display: none; }
+
+/* PARTNERS */
+.partners { padding: clamp(90px, 12vw, 160px) 0; background: var(--ink); }
+.partners__title { margin: 0; font: 700 clamp(32px, 4.8vw, 64px)/1.1 var(--ui); letter-spacing: -.02em; }
+html:lang(ja) .partners__title { font-weight: 900; letter-spacing: 0; line-height: 1.4; font-size: clamp(28px, 4vw, 52px); }
+.partners__lead { max-width: 640px; margin: 24px 0 0; color: var(--mute); }
+.partners__lanes { display: grid; grid-template-columns: 1.3fr 1fr 1fr; margin: clamp(50px, 6vw, 80px) 0 0; border-top: 1px solid var(--line); }
+.lane { padding: 32px 24px 32px 0; }
+.lane + .lane { padding-left: 24px; border-left: 1px solid var(--line); }
+.lane__k { margin: 0; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--mute); }
+.lane__h { margin: 10px 0 10px; font: 400 clamp(30px, 3.2vw, 44px)/1 var(--display); letter-spacing: .02em; color: var(--gold); }
+.lane:first-child .lane__h { font-size: clamp(36px, 4vw, 56px); }
+.lane p:last-child { margin: 0; color: var(--mute); font-size: 15px; }
+.seats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 20px 0 40px; }
+.seat { display: grid; place-items: center; min-height: 110px; border-radius: 16px; border: 1px dashed rgba(245,184,61,.4); background: repeating-linear-gradient(135deg, rgba(245,184,61,.04) 0 10px, transparent 10px 20px); }
+.seat span { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,215,122,.8); }
+
+/* CARE */
+.care { padding: clamp(70px, 9vw, 120px) 0; background: var(--night-2); }
+.care__inner { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: start; }
+.care .eyebrow { color: var(--sky); }
+.care__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.care__list li { display: grid; grid-template-columns: 56px 1fr; padding: 18px 0; border-bottom: 1px solid var(--line); font-size: 17px; }
+.care__list li:first-child { border-top: 1px solid var(--line); }
+.care__n { font: 400 22px/1.4 var(--display); color: var(--sky); }
+
+/* FINAL */
+.final { position: relative; padding: clamp(120px, 16vw, 220px) 0; text-align: center; overflow: hidden; background: radial-gradient(60% 60% at 50% 100%, rgba(245,184,61,.25), transparent 70%), var(--ink); }
+.final__line { position: absolute; left: 50%; top: 0; width: 3px; height: 38%; transform: translateX(-50%); background: linear-gradient(180deg, transparent, var(--gold)); box-shadow: 0 0 20px var(--gold); }
+.final__title { margin: 0 0 40px; font: 400 clamp(48px, 8vw, 128px)/.95 var(--display); text-transform: uppercase; }
+html:lang(ja) .final__title { font: 900 clamp(32px, 5.4vw, 72px)/1.3 var(--ui); }
+
+/* FOOTER */
+.ftr { padding: 48px 0 80px; border-top: 1px solid var(--line); font-size: 13px; color: var(--mute); }
+.ftr__inner { display: grid; grid-template-columns: auto auto 1fr; gap: 16px 32px; align-items: center; }
+.ftr__brand { margin: 0; font: 400 18px/1 var(--display); letter-spacing: .08em; color: var(--text); }
+.ftr__tm { grid-column: 1 / -1; margin: 0; max-width: 720px; }
+.ftr__copy { grid-column: 1 / -1; margin: 0; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .hdr__nav { display: none; }
+  .stage__head { grid-template-columns: 1fr; gap: 20px; }
+  .stage__rail { gap: 16px; }
+  .hdr__right { margin-left: auto; }
+  .join__grid, .care__inner { grid-template-columns: 1fr; }
+  .join__stage { position: relative; top: 0; }
+  .engine__flow { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .engine__flow::before { display: none; }
+  .partners__lanes { grid-template-columns: 1fr; }
+  .lane, .lane + .lane { padding: 26px 0; border-left: 0; border-bottom: 1px solid var(--line); }
+  .seats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  :root { --wrap: calc(100% - 40px); --hdr-h: 58px; }
+  body { font-size: 16px; }
+  .hdr { gap: 10px; }
+  .hdr__name { font-size: 15px; }
+  .hdr .btn--sm { display: none; }
+  .hero__title { flex-direction: column; gap: 6px; font-size: clamp(64px, 23vw, 120px); }
+  .hero__arrow svg { transform: rotate(90deg); width: 52px; }
+  .hero__mirror { display: none; }
+  .hero__ctas .btn { width: 100%; }
+  html:lang(ja) .road__title, html:lang(ja) .engine__title, html:lang(ja) .partners__title, html:lang(ja) .join__title { font-size: 6.4vw; }
+  html:lang(ja) .final__title { font-size: 7.4vw; }
+  html:lang(en) .road__title { font-size: 10.5vw; }
+  html:lang(tr) .road__title { font-size: 10vw; }
+  html:lang(tr) .stage__title { font-size: 12.5vw; }
+  .lang button { min-width: 44px; padding: 0 8px; }
+  html:lang(ja) .crew__statement { font-size: 5.6vw; }
+  .crew__facts { grid-template-columns: 1fr 1fr; }
+  .crew__facts > div:nth-child(3) { grid-column: 1 / -1; border-left: 0; padding-left: 0; border-top: 1px solid var(--line); margin-top: 22px; }
+  .mentor { padding: 20px; gap: 16px; }
+  .mentor__badge { width: 58px; height: 58px; font-size: 20px; }
+  /* road: single column with line on the left */
+  .stop { grid-template-columns: 1fr; }
+  .stop__node { left: 11px; top: 26px; margin: -11px 0 0 -11px; }
+  .stop--goal { padding-top: 0; }
+  .stop--goal .stop__card, .stop--goal:nth-child(even) .stop__card { padding-top: 0; }
+  .stop--goal .stop__node { left: 11px; top: 40px; margin: -17px 0 0 -17px; }
+  .stop__card, .stop:nth-child(even) .stop__card { grid-column: 1; justify-self: start; margin: 0 0 0 48px; text-align: left; width: auto; }
+  .engine__flow { grid-template-columns: 1fr; row-gap: 28px; }
+  .engine__step { display: grid; grid-template-columns: 56px 1fr; column-gap: 18px; padding: 0; }
+  .engine__n { grid-row: span 2; }
+  .engine__h { margin: 4px 0 4px; }
+  .stage__rail { grid-auto-columns: 62vw; gap: 12px; padding-inline: 20px; scroll-padding-inline: 20px; }
+  .igp { max-width: none; }
+  .stage__foot .stage__note { font-size: 12px; }
+  .final__ctas .btn { width: 100%; }
+  html:lang(ja) .stage__title { font-size: 7vw; }
+  .seats { gap: 10px; }
+  .seat { min-height: 84px; }
+  .care__list li { grid-template-columns: 44px 1fr; font-size: 16px; }
+  .ftr__inner { grid-template-columns: 1fr; }
+}
+@media (max-width: 360px) {
+  .hdr__name { font-size: 13px; letter-spacing: .05em; }
+  .lang button { min-width: 44px; padding: 0 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; }
+  .rv, .rv-ready .rv { opacity: 1; transform: none; filter: none; }
+  .hero__arrow svg { stroke-dashoffset: 0; }
+}
+
+/* ---------- Accessibility pass: solid fallbacks, readable sizes, 44px targets ---------- */
+.btn--gold { background-color: var(--gold); background-image: var(--bg); }
+.btn--ig { background-color: #c42a6c; background-image: var(--bg); }
+.hero__to, .stop--goal .stop__name { color: var(--gold); -webkit-text-fill-color: transparent; }
+.mentor { background-color: #0e0f15; }
+.mentor__badge { background-color: var(--gold); }
+.igp { background-color: #0c0c0e; }
+.form__preview { background-color: #221e1c; }
+.card3d__name.is-empty, .card3d__back-name.is-empty { color: rgba(244,241,234,.5); }
+.card3d__tier, .card3d__meta { font-size: 12px; }
+.card3d__road span { font-size: 12px; }
+.card3d__road span:first-of-type { bottom: -20px; }
+.card3d__road span:last-child { top: -18px; }
+.hdr__brand { min-height: 44px; }
+.lang button { min-height: 44px; }
+.hero__more { min-height: 44px; display: inline-flex; align-items: flex-end; }
+.reel__here { height: 44px; }
+.reel__cta { bottom: 66px; }
+.setlist button { height: 44px; }
+.stop__seat { min-height: 44px; align-items: center; }
+.ftr__inner > a { display: inline-flex; align-items: center; min-height: 44px; }
+/* ---------- Polish pass: states, wrapping, motion ---------- */
+h1, h2, h3, .crew__statement, .stage__title, .road__title, .engine__title, .join__title, .partners__title, .final__title, .stop__name, .lane__h { text-wrap: balance; }
+p, li, dd, .stop__text, .stage__text, .care__list li span:last-child { text-wrap: pretty; }
+/* buttons lift on hover, shrink a touch when pressed */
+.btn:hover { transform: translateY(-2px); }
+.btn:active, .btn--gold:active, .btn--ig:active { transform: translateY(0) scale(.98); transition-duration: .15s; }
+.btn:disabled { transform: none; cursor: progress; }
+.hero__more { transition: color .3s var(--ease), border-color .3s var(--ease); }
+.stop__seat:hover { border-color: var(--gold); }
+.stop__seat:active, .reel__here:active, .round:active, .setlist button:active, .lang button:active, .reel__back:active, .field--choice label:active span { transform: scale(.96); transition-duration: .15s; }
+.lang button { transition: background-color .3s var(--ease), color .3s var(--ease), transform .3s var(--ease); }
+.lang button:hover:not([aria-pressed="true"]) { color: var(--text); background: rgba(244,241,234,.08); }
+.round:hover { transform: translateY(-2px); }
+.setlist button:hover { transform: translateY(-2px); }
+.field--choice label:hover input:not(:checked) + span { border-color: rgba(244,241,234,.45); color: var(--text); }
+.reel__back { transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.reel__back:hover { border-color: var(--gold); background: rgba(245,184,61,.2); }
+.form__edit { transition: color .3s var(--ease); }
+.form__edit:hover { color: var(--gold-hi); }
+.igp__handle { transition: color .3s var(--ease); }
+.igp__id:hover .igp__handle { color: var(--gold-hi); }
+.igp__ring { transition: transform .3s var(--ease); }
+.igp__id:hover .igp__ring { transform: scale(1.05); }
+.ftr a { text-decoration-color: rgba(244,241,234,.3); text-underline-offset: 4px; transition: color .3s var(--ease), text-decoration-color .3s var(--ease); }
+.ftr a:hover { color: var(--gold-hi); text-decoration-color: var(--gold); }
+/* cards answer the pointer */
+.mentor, .igp, .seat { transition: border-color .3s var(--ease), background-color .3s var(--ease), transform .3s var(--ease); }
+.mentor:hover, .igp:hover { border-color: rgba(245,184,61,.35); }
+.seat:hover { border-color: var(--gold); background-color: rgba(245,184,61,.06); }
+.rv-ready .mentor.rv, .rv-ready .igp.rv, .rv-ready .seat.rv { transition: opacity .8s var(--ease), transform .8s var(--ease), filter .8s var(--ease), border-color .3s var(--ease), background-color .3s var(--ease); }
+.reel { transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.reel:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(245,184,61,.45), 0 40px 80px -36px rgba(245,184,61,.55); }
+.reel.is-playing:hover { transform: none; }
+/* focus rings stay visible inside clipped and dark boxes */
+.reel__link:focus-visible { outline-offset: -3px; border-radius: 18px; }
+.reel__here:focus-visible, .reel__back:focus-visible, .round:focus-visible, .setlist button:focus-visible, .lang button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.btn:focus-visible { outline-offset: 4px; border-radius: 999px; }
+.field input:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+@media (hover: none) { .reel:hover, .round:hover, .setlist button:hover { transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover, .btn:active, .reel:hover, .round:hover, .setlist button:hover, .igp__id:hover .igp__ring { transform: none; }
+}
+</style>
+</head>
+<body>
+<div lang="en" style="position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:9999;pointer-events:none;background:#f5b83d;color:#07070a;font:700 11px/1 system-ui,sans-serif;letter-spacing:.14em;padding:7px 12px;border-radius:999px;box-shadow:0 4px 14px rgba(0,0,0,.4)">CONCEPT PREVIEW</div>
+<header class="hdr" id="top">
+  <a class="hdr__brand" href="#top" aria-label="African Mirror">
+    <span class="hdr__mark" aria-hidden="true"><i></i><i></i></span>
+    <span class="hdr__name">AFRICAN MIRROR</span>
+  </a>
+  <nav class="hdr__nav" aria-label="Sections">
+    <a href="#stage" data-i18n="nav.stage">Watch</a>
+    <a href="#road" data-i18n="nav.road">The Road</a>
+    <a href="#crew" data-i18n="nav.crew">The Crew</a>
+    <a href="#partners" data-i18n="nav.partners">Partners</a>
+  </nav>
+  <div class="hdr__right">
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+      <button type="button" data-lang="tr" aria-pressed="false">TR</button>
+    </div>
+    <a class="btn btn--gold btn--sm" href="#join" data-i18n="cta.short">Join free</a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas class="hero__beams" aria-hidden="true"></canvas>
+    <div class="hero__inner">
+      <p class="hero__kicker"><span class="dot dot--sky"></span><span data-i18n="hero.kicker">Kigali, Rwanda · Kids dance crew · Ages 5–16</span></p>
+      <h1 class="hero__title" id="hero-title">
+        <span class="hero__from">KIGALI</span>
+        <span class="hero__arrow" aria-hidden="true"><svg viewBox="0 0 120 24"><path d="M0 12h108M98 2l12 10-12 10"/></svg></span>
+        <span class="hero__to">GRAMMY</span>
+      </h1>
+      <div class="hero__mirror" aria-hidden="true"><span>KIGALI</span><span class="hero__arrow hero__arrow--ghost"><svg viewBox="0 0 120 24"></svg></span><span>GRAMMY</span></div>
+      <p class="hero__lead" data-i18n="hero.lead">Sixty young dancers. One road to the GRAMMY stage. The fans decide how bright it gets.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--gold" href="#join"><span data-i18n="cta.main">Get your Front Row card — free</span><svg class="btn__arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+        <a class="btn btn--ig" href="https://www.instagram.com/african_mirror.1/" target="_blank" rel="noopener" data-follow><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="follow.cta">Follow on Instagram</span></a>
+      </div>
+      <a class="hero__more" href="#stage" data-i18n="hero.more">Watch them dance ↓</a>
+    </div>
+    <div class="hero__scroll" aria-hidden="true"><span></span></div>
+  </section>
+
+  <!-- CREW -->
+  <section class="crew" id="crew" aria-labelledby="crew-title">
+    <div class="wrap">
+      <h2 class="eyebrow" id="crew-title" data-i18n="crew.eyebrow">The crew</h2>
+      <p class="crew__statement" data-i18n="crew.statement">African Mirror is a kids' dance crew from Kigali. They train hard, perform loud, and they are aiming for the top.</p>
+      <dl class="crew__facts">
+        <div><dt data-i18n="crew.f1.l">Ages</dt><dd><span class="num">5–16</span></dd></div>
+        <div><dt data-i18n="crew.f2.l">Dancers</dt><dd><span class="num" data-i18n="crew.f2.v">≈60</span></dd></div>
+        <div><dt data-i18n="crew.f3.l">Home</dt><dd><span class="num num--word">KIGALI</span></dd></div>
+      </dl>
+      <div class="mentor">
+        <div class="mentor__badge" aria-hidden="true">TB</div>
+        <div>
+          <p class="mentor__role" data-i18n="mentor.role">Mentor</p>
+          <p class="mentor__name">Titi Brown</p>
+          <p class="mentor__desc" data-i18n="mentor.desc">Dancer and comedian, and mentor to the crew.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAGE (Instagram) -->
+  <section class="stage" id="stage" aria-labelledby="stage-title">
+    <div class="stage__lights" aria-hidden="true"></div>
+    <div class="wrap stage__head">
+      <div>
+        <h2 class="eyebrow" id="stage-title" data-i18n="stage.eyebrow">On stage</h2>
+        <p class="stage__title" data-i18n-html="stage.title">Press play.<br>Feel Kigali.</p>
+      </div>
+      <div class="stage__side">
+        <p class="stage__text" data-i18n="stage.text">Straight from the crew's Instagram. Tap a reel to watch it on Instagram — or press “Play here” to watch it on this page.</p>
+        <div class="igp">
+          <a class="igp__id" href="https://www.instagram.com/african_mirror.1/" target="_blank" rel="noopener">
+            <span class="igp__ring"><img src="../african-mirror/profile.jpg" alt="" width="56" height="56"></span>
+            <span class="igp__names"><span class="igp__handle">african_mirror.1</span><span class="igp__name">AFRICAN_MIRROR</span></span>
+          </a>
+          <dl class="igp__stats">
+            <div><dt data-i18n="ig.followers">Followers</dt><dd>189K</dd></div>
+            <div><dt data-i18n="ig.posts">Posts</dt><dd>531</dd></div>
+          </dl>
+          <p class="igp__asof" data-i18n="ig.asof">As of Oct 2026</p>
+          <a class="btn btn--ig btn--block" href="https://www.instagram.com/african_mirror.1/" target="_blank" rel="noopener" data-follow><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="follow.cta">Follow on Instagram</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="stage__rail" data-reels role="list" aria-label="Reels">
+      <figure class="reel" role="listitem" data-code="DeV90AsNF30" data-no="01" id="reel-1"><a class="reel__link" href="https://www.instagram.com/reel/DeV90AsNF30/" target="_blank" rel="noopener"><img src="../african-mirror/DeV90AsNF30.jpg" alt="" loading="eager" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">01</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DcRyv79Nh87" data-no="02" id="reel-2"><a class="reel__link" href="https://www.instagram.com/reel/DcRyv79Nh87/" target="_blank" rel="noopener"><img src="../african-mirror/DcRyv79Nh87.jpg" alt="" loading="eager" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">02</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="Dcy8IEkNO8G" data-no="03" id="reel-3"><a class="reel__link" href="https://www.instagram.com/reel/Dcy8IEkNO8G/" target="_blank" rel="noopener"><img src="../african-mirror/Dcy8IEkNO8G.jpg" alt="" loading="eager" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">03</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DcO2SE2NMiz" data-no="04" id="reel-4"><a class="reel__link" href="https://www.instagram.com/reel/DcO2SE2NMiz/" target="_blank" rel="noopener"><img src="../african-mirror/DcO2SE2NMiz.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">04</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="Db2i1qWtqI_" data-no="05" id="reel-5"><a class="reel__link" href="https://www.instagram.com/reel/Db2i1qWtqI_/" target="_blank" rel="noopener"><img src="../african-mirror/Db2i1qWtqI_.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">05</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DcZKHL_tRkU" data-no="06" id="reel-6"><a class="reel__link" href="https://www.instagram.com/reel/DcZKHL_tRkU/" target="_blank" rel="noopener"><img src="../african-mirror/DcZKHL_tRkU.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">06</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="Dcz_JMFtxNe" data-no="07" id="reel-7"><a class="reel__link" href="https://www.instagram.com/reel/Dcz_JMFtxNe/" target="_blank" rel="noopener"><img src="../african-mirror/Dcz_JMFtxNe.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">07</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DZpwIulNP5M" data-no="08" id="reel-8"><a class="reel__link" href="https://www.instagram.com/reel/DZpwIulNP5M/" target="_blank" rel="noopener"><img src="../african-mirror/DZpwIulNP5M.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">08</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DeXdgRntCYq" data-no="09" id="reel-9"><a class="reel__link" href="https://www.instagram.com/reel/DeXdgRntCYq/" target="_blank" rel="noopener"><img src="../african-mirror/DeXdgRntCYq.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">09</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DeZrwQNtHyu" data-no="10" id="reel-10"><a class="reel__link" href="https://www.instagram.com/reel/DeZrwQNtHyu/" target="_blank" rel="noopener"><img src="../african-mirror/DeZrwQNtHyu.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">10</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="Db8-2dTN7z-" data-no="11" id="reel-11"><a class="reel__link" href="https://www.instagram.com/reel/Db8-2dTN7z-/" target="_blank" rel="noopener"><img src="../african-mirror/Db8-2dTN7z-.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">11</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DdD0kT1NU3b" data-no="12" id="reel-12"><a class="reel__link" href="https://www.instagram.com/reel/DdD0kT1NU3b/" target="_blank" rel="noopener"><img src="../african-mirror/DdD0kT1NU3b.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">12</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="Db8CftbNJWr" data-no="13" id="reel-13"><a class="reel__link" href="https://www.instagram.com/reel/Db8CftbNJWr/" target="_blank" rel="noopener"><img src="../african-mirror/Db8CftbNJWr.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">13</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="Dc3yq5eNoOJ" data-no="14" id="reel-14"><a class="reel__link" href="https://www.instagram.com/reel/Dc3yq5eNoOJ/" target="_blank" rel="noopener"><img src="../african-mirror/Dc3yq5eNoOJ.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">14</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+      <figure class="reel" role="listitem" data-code="DeUwaU5NMwm" data-no="15" id="reel-15"><a class="reel__link" href="https://www.instagram.com/reel/DeUwaU5NMwm/" target="_blank" rel="noopener"><img src="../african-mirror/DeUwaU5NMwm.jpg" alt="" loading="lazy" decoding="async" width="540" height="960"><span class="reel__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4.5v15l12-7.5z"/></svg></span><span class="reel__no" aria-hidden="true">15</span><span class="reel__cta"><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="stage.watch">Watch on Instagram</span></span></a><button type="button" class="reel__here"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg><span data-i18n="stage.here">Play here</span></button><div class="reel__embed"></div></figure>
+    </div>
+    <div class="wrap">
+      <ol class="setlist" data-setlist aria-label="Setlist"></ol>
+    </div>
+    <div class="wrap stage__foot">
+      <p class="stage__note" data-i18n="stage.note">Embedded from @african_mirror.1 on Instagram. Nothing is copied or re-uploaded.</p>
+      <div class="stage__nav" aria-hidden="true">
+        <button type="button" class="round" data-rail="-1" tabindex="-1"><svg viewBox="0 0 20 20"><path d="M12 4l-6 6 6 6"/></svg></button>
+        <button type="button" class="round" data-rail="1" tabindex="-1"><svg viewBox="0 0 20 20"><path d="M8 4l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROAD -->
+  <section class="road" id="road" aria-labelledby="road-title">
+    <div class="wrap road__head">
+      <h2 class="eyebrow" id="road-title" data-i18n="road.eyebrow">The road</h2>
+      <p class="road__title" data-i18n-html="road.title">From a studio in Kigali<br>to the GRAMMY stage.</p>
+      <p class="road__note" data-i18n="road.note">This is the plan, not a list of wins. Every stop ahead is a goal — and fans are how we reach it.</p>
+    </div>
+    <div class="road__track">
+      <svg class="road__line" aria-hidden="true"><path class="road__base"/><path class="road__lit"/></svg>
+      <ol class="road__stops">
+      <li class="stop is-now" data-stop="1">
+        <span class="stop__node" aria-hidden="true"></span>
+        <div class="stop__card">
+          <p class="stop__no">01 · <span data-i18n="road.now">You are here</span></p>
+          <h3 class="stop__name">KIGALI</h3>
+          <p class="stop__text" data-i18n="road.s1">The studio. Daily practice, sixty dancers, one crew.</p>
+        </div>
+      </li>
+      <li class="stop" data-stop="2">
+        <span class="stop__node" aria-hidden="true"></span>
+        <div class="stop__card">
+          <p class="stop__no">02</p>
+          <h3 class="stop__name" data-i18n="road.s2.n">THE BIG STAGE</h3>
+          <p class="stop__text" data-i18n="road.s2">Bigger crowds, bigger shows — at home and across the region.</p>
+          <a class="stop__seat" href="#partners" data-i18n="road.seat">Open partner seat</a>
+        </div>
+      </li>
+      <li class="stop" data-stop="3">
+        <span class="stop__node" aria-hidden="true"></span>
+        <div class="stop__card">
+          <p class="stop__no">03</p>
+          <h3 class="stop__name" data-i18n="road.s3.n">THE WORLD WATCHES</h3>
+          <p class="stop__text" data-i18n="road.s3">Fans everywhere share the crew's videos until the world can't scroll past.</p>
+          <a class="stop__seat" href="#partners" data-i18n="road.seat">Open partner seat</a>
+        </div>
+      </li>
+      <li class="stop" data-stop="4">
+        <span class="stop__node" aria-hidden="true"></span>
+        <div class="stop__card">
+          <p class="stop__no">04</p>
+          <h3 class="stop__name" data-i18n="road.s4.n">FIRST RELEASE</h3>
+          <p class="stop__text" data-i18n="road.s4">An original track and performance video, made for the world.</p>
+          <a class="stop__seat" href="#partners" data-i18n="road.seat">Open partner seat</a>
+        </div>
+      </li>
+      <li class="stop" data-stop="5">
+        <span class="stop__node" aria-hidden="true"></span>
+        <div class="stop__card">
+          <p class="stop__no">05</p>
+          <h3 class="stop__name" data-i18n="road.s5.n">INTERNATIONAL STAGE</h3>
+          <p class="stop__text" data-i18n="road.s5">Kigali's energy on stages far from home.</p>
+          <a class="stop__seat" href="#partners" data-i18n="road.seat">Open partner seat</a>
+        </div>
+      </li>
+      <li class="stop stop--goal" data-stop="6">
+        <span class="stop__node" aria-hidden="true"></span>
+        <div class="stop__card">
+          <p class="stop__no">06 · <span data-i18n="road.goal">The goal</span></p>
+          <h3 class="stop__name">GRAMMY</h3>
+          <p class="stop__text" data-i18n="road.s6">The goal at the end of this road. We're saying it out loud.</p>
+        </div>
+      </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FAN ENGINE -->
+  <section class="engine" aria-labelledby="engine-title">
+    <div class="wrap">
+      <h2 class="eyebrow" id="engine-title" data-i18n="engine.eyebrow">How fans move the road</h2>
+      <p class="engine__title" data-i18n-html="engine.title">Not a crew you watch.<br>A crew you <em>grow</em>.</p>
+      <div class="engine__flow">
+        <div class="engine__step"><span class="engine__n">1</span><p class="engine__h" data-i18n="engine.1h">Join</p><p data-i18n="engine.1">Take your Front Row card. Free.</p></div>
+        <div class="engine__step"><span class="engine__n">2</span><p class="engine__h" data-i18n="engine.2h">Cheer &amp; share</p><p data-i18n="engine.2">Watch, share, show up. Every fan adds light to the road.</p></div>
+        <div class="engine__step"><span class="engine__n">3</span><p class="engine__h" data-i18n="engine.3h">Partners step in</p><p data-i18n="engine.3">A bright crowd brings companies and patrons who power the next stop.</p></div>
+        <div class="engine__step"><span class="engine__n">4</span><p class="engine__h" data-i18n="engine.4h">The crew levels up</p><p data-i18n="engine.4">Bigger stages, new work — and a road that keeps getting brighter.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN / FRONT ROW CARD -->
+  <section class="join" id="join" aria-labelledby="join-title">
+    <div class="wrap join__grid">
+      <div class="join__stage">
+        <div class="card3d" data-state="idle" data-tier="free">
+          <div class="card3d__inner">
+            <div class="card3d__face card3d__front">
+              <div class="card3d__holo" aria-hidden="true"></div>
+              <div class="card3d__top">
+                <span class="card3d__brand">AFRICAN MIRROR</span>
+                <span class="card3d__tier" data-tier-label>FRONT ROW</span>
+              </div>
+              <div class="card3d__road" aria-hidden="true"><svg viewBox="0 0 300 40"><path d="M4 30 C 70 30, 90 8, 150 18 S 240 34, 296 8"/><circle cx="4" cy="30" r="4"/><circle cx="296" cy="8" r="5"/></svg><span>KIGALI</span><span>GRAMMY</span></div>
+              <div class="card3d__name" data-card-name>YOUR NAME</div>
+              <div class="card3d__meta">
+                <span data-i18n="card.member">Front Row member</span>
+                <span data-card-since>SINCE —</span>
+              </div>
+            </div>
+            <div class="card3d__face card3d__back">
+              <div class="card3d__holo" aria-hidden="true"></div>
+              <p class="card3d__back-k" data-i18n="card.backk">Welcome to the front row</p>
+              <p class="card3d__back-name" data-card-name>YOUR NAME</p>
+              <p class="card3d__back-t" data-i18n="card.backt">Your light is on the road now. Next stop: the big stage.</p>
+              <span class="card3d__back-mark" aria-hidden="true"><i></i><i></i></span>
+            </div>
+          </div>
+        </div>
+        <p class="join__hint" data-i18n="card.hint">Type your name — it goes on your card.</p>
+      </div>
+
+      <div class="join__form-wrap">
+        <h2 class="eyebrow" id="join-title" data-i18n="join.eyebrow">Front Row — free membership</h2>
+        <p class="join__title" data-i18n-html="join.title">Take your seat<br>before the world does.</p>
+        <ul class="join__perks" data-perks></ul>
+
+        <form class="form" novalidate aria-labelledby="join-title">
+          <p class="form__preview" data-preview-note data-i18n="form.previewNote" hidden>Preview: this form does not send or save anything yet.</p>
+          <div class="field">
+            <label for="f-name" data-i18n="form.name">Name on your card</label>
+            <input id="f-name" name="display_name" type="text" maxlength="22" autocomplete="nickname" required>
+            <p class="field__help" data-i18n="form.nameHelp">A nickname is fine. Up to 22 characters.</p>
+          </div>
+          <div class="field">
+            <label for="f-email" data-i18n="form.email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-country" data-i18n="form.country">Country / region</label>
+            <input id="f-country" name="country" type="text" autocomplete="country-name">
+          </div>
+          <fieldset class="field field--choice">
+            <legend data-i18n="form.role">I'm joining as</legend>
+            <label><input type="radio" name="role" value="fan" checked><span data-i18n="form.role.fan">A fan</span></label>
+            <label><input type="radio" name="role" value="patron"><span data-i18n="form.role.patron">An individual supporter</span></label>
+            <label><input type="radio" name="role" value="company"><span data-i18n="form.role.company">A company / organisation</span></label>
+          </fieldset>
+          <div class="field field--company" hidden>
+            <label for="f-org" data-i18n="form.org">Company / organisation name</label>
+            <input id="f-org" name="organisation" type="text" autocomplete="organization">
+          </div>
+          <label class="check"><input type="checkbox" name="consent" required><span data-i18n="form.consent">I agree to receive African Mirror fan club updates by email. I can unsubscribe any time.</span></label>
+          <p class="form__minor" data-i18n="form.minor">Under 16? Please ask a parent or guardian before joining.</p>
+          <p class="form__error" role="alert" aria-live="assertive"></p>
+          <button class="btn btn--gold btn--block" type="submit"><span data-i18n="form.submit">Get my Front Row card</span><svg class="btn__arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+          <div class="after-join" hidden>
+            <p class="after-join__k" data-i18n="after.k">Next step</p>
+            <p class="after-join__t" data-i18n="after.t">Follow the crew on Instagram so you never miss a new move.</p>
+            <a class="btn btn--ig btn--block" href="https://www.instagram.com/african_mirror.1/" target="_blank" rel="noopener" data-follow><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="follow.cta">Follow on Instagram</span></a>
+          </div>
+          <button class="form__edit" type="button" hidden data-i18n="form.edit">Edit my card</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="partners" id="partners" aria-labelledby="partners-title">
+    <div class="wrap">
+      <h2 class="eyebrow" id="partners-title" data-i18n="partners.eyebrow">Partners</h2>
+      <p class="partners__title" data-i18n-html="partners.title">Fans light the road.<br>Partners build the stage.</p>
+      <p class="partners__lead" data-i18n="partners.lead">Companies and individuals can stand behind a single stop on the road — or behind the whole journey. Partners will be featured on this page.</p>
+      <div class="partners__lanes">
+        <article class="lane">
+          <p class="lane__k" data-i18n="partners.l1k">For companies</p>
+          <h3 class="lane__h" data-i18n="partners.l1h">Stop partner</h3>
+          <p data-i18n="partners.l1">Back one stop on the road — a stage, a release, a journey.</p>
+        </article>
+        <article class="lane">
+          <p class="lane__k" data-i18n="partners.l2k">For companies</p>
+          <h3 class="lane__h" data-i18n="partners.l2h">Road partner</h3>
+          <p data-i18n="partners.l2">Stand behind the whole road from Kigali to the GRAMMY stage.</p>
+        </article>
+        <article class="lane">
+          <p class="lane__k" data-i18n="partners.l3k">For individuals</p>
+          <h3 class="lane__h" data-i18n="partners.l3h">Patron</h3>
+          <p data-i18n="partners.l3">Support the crew personally, as a fan who goes one step further.</p>
+        </article>
+      </div>
+      <div class="seats" aria-label="Partner seats">
+        <div class="seat"><span data-i18n="partners.seat">Open seat</span></div>
+        <div class="seat"><span data-i18n="partners.seat">Open seat</span></div>
+        <div class="seat"><span data-i18n="partners.seat">Open seat</span></div>
+        <div class="seat"><span data-i18n="partners.seat">Open seat</span></div>
+      </div>
+      <a class="btn btn--gold" href="#join" data-preset-role="company" data-i18n="partners.cta">Talk to us about partnering</a>
+    </div>
+  </section>
+
+  <!-- CARE -->
+  <section class="care" aria-labelledby="care-title">
+    <div class="wrap care__inner">
+      <h2 class="eyebrow" id="care-title" data-i18n="care.eyebrow">How we look after the crew</h2>
+      <ul class="care__list">
+        <li><span class="care__n">01</span><span data-i18n="care.1">Dancers are not named here. No personal details, no home or school information.</span></li>
+        <li><span class="care__n">02</span><span data-i18n="care.2">Only posts cleared with the crew and their guardians are shown here.</span></li>
+        <li><span class="care__n">03</span><span data-i18n="care.3">We share real numbers only. If we haven't done it yet, we call it a goal.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final" aria-labelledby="final-title">
+    <div class="final__line" aria-hidden="true"></div>
+    <div class="wrap">
+      <p class="final__title" id="final-title" data-i18n-html="final.title">Every road starts<br>with one light.</p>
+      <div class="final__ctas">
+      <a class="btn btn--gold" href="#join"><span data-i18n="cta.main">Get your Front Row card — free</span><svg class="btn__arw" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5"/></svg></a>
+      <a class="btn btn--ig" href="https://www.instagram.com/african_mirror.1/" target="_blank" rel="noopener" data-follow><svg class="ig" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle class="ig__dot" cx="17.4" cy="6.6" r="1.1"/></svg><span data-i18n="follow.cta">Follow on Instagram</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__inner">
+    <p class="ftr__brand">AFRICAN MIRROR</p>
+    <a href="https://www.instagram.com/african_mirror.1" target="_blank" rel="noopener">Instagram @african_mirror.1</a>
+    <p class="ftr__tm" data-i18n="footer.tm">GRAMMY is a registered trademark of the Recording Academy. African Mirror is not affiliated with or endorsed by the Recording Academy.</p>
+    <p class="ftr__copy">© African Mirror</p>
+  </div>
+</footer>
+
+<script>
+/* Copy for EN (default), JA and TR. Keys map to data-i18n / data-i18n-html. */
+window.I18N = {
+  en: {
+    'nav.stage': 'Watch',
+    'hero.more': 'Watch them dance ↓',
+    'stage.eyebrow': 'On stage',
+    'stage.title': 'Press play.<br>Feel Kigali.',
+    'stage.text': "Straight from the crew's Instagram. Tap a reel to watch it on Instagram — or press “Play here” to watch it on this page.",
+    'stage.note': 'Embedded from @african_mirror.1 on Instagram. Nothing is copied or re-uploaded.',
+    'stage.play': 'Play reel',
+    'stage.setlist': 'Setlist',
+    'stage.here': 'Play here',
+    'stage.back': 'Back',
+    'stage.watch': 'Watch on Instagram',
+    'ig.followers': 'Followers',
+    'ig.posts': 'Posts',
+    'ig.asof': 'As of Oct 2026',
+    'stage.jump': 'Go to reel',
+    'stage.open': 'Open on Instagram',
+    'stage.loading': 'Loading from Instagram…',
+    'follow.cta': 'Follow on Instagram',
+    'follow.count': '189K followers on Instagram · Oct 2026',
+    'after.k': 'Next step',
+    'after.t': 'Follow the crew on Instagram so you never miss a new move.',
+    'nav.road': 'The Road', 'nav.crew': 'The Crew', 'nav.partners': 'Partners',
+    'cta.short': 'Join free',
+    'cta.main': 'Get your Front Row card — free',
+    'cta.road': 'See the road',
+    'hero.kicker': 'Kigali, Rwanda · Kids dance crew · Ages 5–16',
+    'hero.lead': 'Sixty young dancers. One road to the GRAMMY stage. The fans decide how bright it gets.',
+    'crew.eyebrow': 'The crew',
+    'crew.statement': "African Mirror is a kids' dance crew from Kigali. They train hard, perform loud, and they are aiming for the top.",
+    'crew.f1.l': 'Ages', 'crew.f2.l': 'Dancers', 'crew.f2.v': '≈60', 'crew.f3.l': 'Home',
+    'mentor.role': 'Mentor',
+    'mentor.desc': 'Dancer and comedian, and mentor to the crew.',
+    'road.eyebrow': 'The road',
+    'road.title': 'From a studio in Kigali<br>to the GRAMMY stage.',
+    'road.note': 'This is the plan, not a list of wins. Every stop ahead is a goal — and fans are how we reach it.',
+    'road.now': 'You are here', 'road.goal': 'The goal',
+    'road.s1': 'The studio. Daily practice, sixty dancers, one crew.',
+    'road.s2.n': 'THE BIG STAGE', 'road.s2': 'Bigger crowds, bigger shows — at home and across the region.',
+    'road.s3.n': 'THE WORLD WATCHES', 'road.s3': "Fans everywhere share the crew's videos until the world can't scroll past.",
+    'road.s4.n': 'FIRST RELEASE', 'road.s4': 'An original track and performance video, made for the world.',
+    'road.s5.n': 'INTERNATIONAL STAGE', 'road.s5': "Kigali's energy on stages far from home.",
+    'road.s6': "The goal at the end of this road. We're saying it out loud.",
+    'road.seat': 'Open partner seat',
+    'engine.eyebrow': 'How fans move the road',
+    'engine.title': 'Not a crew you watch.<br>A crew you <em>grow</em>.',
+    'engine.1h': 'Join', 'engine.1': 'Take your Front Row card. Free.',
+    'engine.2h': 'Cheer & share', 'engine.2': 'Watch, share, show up. Every fan adds light to the road.',
+    'engine.3h': 'Partners step in', 'engine.3': 'A bright crowd brings companies and patrons who power the next stop.',
+    'engine.4h': 'The crew levels up', 'engine.4': 'Bigger stages, new work — and a road that keeps getting brighter.',
+    'watch.eyebrow': 'See them move',
+    'watch.title': 'The energy is<br>better live.',
+    'watch.text': 'Rehearsals, performances and new moves are posted on Instagram.',
+    'watch.slot': 'Videos on this page will only ever use footage shared with guardian consent.',
+    'card.member': 'Front Row member',
+    'card.backk': 'Welcome to the front row',
+    'card.backt': 'Your light is on the road now. Next stop: the big stage.',
+    'card.hint': 'Type your name — it goes on your card.',
+    'card.placeholder': 'YOUR NAME',
+    'card.since': 'SINCE',
+    'join.eyebrow': 'Front Row — free membership',
+    'join.title': 'Take your seat<br>before the world does.',
+    'perk.card': 'Your own Front Row card, with your name on it',
+    'perk.news': 'Fan club updates by email — new videos, shows and milestones',
+    'perk.early': 'Be counted from the very first stop on the road',
+    'form.name': 'Name on your card', 'form.nameHelp': 'A nickname is fine. Up to 22 characters.',
+    'form.email': 'Email', 'form.country': 'Country / region',
+    'form.role': "I'm joining as", 'form.role.fan': 'A fan', 'form.role.patron': 'An individual supporter', 'form.role.company': 'A company / organisation',
+    'form.org': 'Company / organisation name',
+    'form.consent': 'I agree to receive African Mirror fan club updates by email. I can unsubscribe any time.',
+    'form.minor': 'Under 16? Please ask a parent or guardian before joining.',
+    'form.submit': 'Get my Front Row card',
+    'form.edit': 'Edit my card',
+    'form.err.name': 'Please enter the name for your card.',
+    'form.err.email': 'Please enter a valid email address.',
+    'form.err.consent': 'Please tick the box to receive fan club updates.',
+    'form.err.org': 'Please enter your company or organisation name.',
+    'form.err.send': "Something went wrong. Please try again in a moment.",
+    'form.sending': 'Sending…',
+    'form.ok': "You're in. Welcome to the front row.",
+    'form.okPreview': 'Preview mode: your card is ready, but nothing has been sent yet.',
+    'form.previewNote': 'Preview: this form does not send or save anything yet.',
+    'partners.eyebrow': 'Partners',
+    'partners.title': 'Fans light the road.<br>Partners build the stage.',
+    'partners.lead': 'Companies and individuals can stand behind a single stop on the road — or behind the whole journey. Partners will be featured on this page.',
+    'partners.l1k': 'For companies', 'partners.l1h': 'Stop partner', 'partners.l1': 'Back one stop on the road — a stage, a release, a journey.',
+    'partners.l2k': 'For companies', 'partners.l2h': 'Road partner', 'partners.l2': 'Stand behind the whole road from Kigali to the GRAMMY stage.',
+    'partners.l3k': 'For individuals', 'partners.l3h': 'Patron', 'partners.l3': 'Support the crew personally, as a fan who goes one step further.',
+    'partners.seat': 'Open seat',
+    'partners.cta': 'Talk to us about partnering',
+    'care.eyebrow': 'How we look after the crew',
+    'care.1': 'Dancers are not named here. No personal details, no home or school information.',
+    'care.2': 'Only posts cleared with the crew and their guardians are shown here.',
+    'care.3': "We share real numbers only. If we haven't done it yet, we call it a goal.",
+    'final.title': 'Every road starts<br>with one light.',
+    'footer.tm': 'GRAMMY is a registered trademark of the Recording Academy. African Mirror is not affiliated with or endorsed by the Recording Academy.'
+  },
+  ja: {
+    'nav.stage': '動画',
+    'hero.more': '踊る姿を見る ↓',
+    'stage.eyebrow': 'オンステージ',
+    'stage.title': '再生ボタンで、<br>キガリを感じて。',
+    'stage.text': 'クルーの Instagram から。リールをタップすると Instagram で開きます。「ここで再生」を押せば、このページの中でも見られます。',
+    'stage.note': '@african_mirror.1 の Instagram 投稿を埋め込みで表示しています。保存や再アップロードはしていません。',
+    'stage.play': 'リールを再生',
+    'stage.setlist': 'セットリスト',
+    'stage.here': 'ここで再生',
+    'stage.back': '戻る',
+    'stage.watch': 'Instagram で見る',
+    'ig.followers': 'フォロワー',
+    'ig.posts': '投稿',
+    'ig.asof': '2026年10月時点',
+    'stage.jump': 'リールへ移動',
+    'stage.open': 'Instagram で開く',
+    'stage.loading': 'Instagram から読み込み中…',
+    'follow.cta': 'Instagram でフォロー',
+    'follow.count': 'フォロワー 18.9万人（2026年10月時点）',
+    'after.k': '次のステップ',
+    'after.t': 'Instagram でクルーをフォローして、新しい動画を見逃さないで。',
+    'nav.road': 'ロードマップ', 'nav.crew': 'クルー', 'nav.partners': 'パートナー',
+    'cta.short': '無料で参加',
+    'cta.main': '無料で Front Row カードを受け取る',
+    'cta.road': 'ロードマップを見る',
+    'hero.kicker': 'ルワンダ・キガリ ／ キッズダンスクルー ／ 5〜16歳',
+    'hero.lead': '約60人の若いダンサーたち。目指すのは、グラミーの舞台。その道をどこまで明るくできるかは、ファンが決める。',
+    'crew.eyebrow': 'クルー',
+    'crew.statement': 'African Mirror は、ルワンダの首都キガリのキッズダンスクルー。よく練習し、全力で踊り、頂点を目指している。',
+    'crew.f1.l': '年齢', 'crew.f2.l': 'ダンサー', 'crew.f2.v': '約60人', 'crew.f3.l': '拠点',
+    'mentor.role': 'メンター',
+    'mentor.desc': 'ダンサーであり、コメディアン。クルーのメンターを務める。',
+    'road.eyebrow': 'ロードマップ',
+    'road.title': 'キガリのスタジオから、<br>グラミーの舞台へ。',
+    'road.note': 'これは実績ではなく「計画」です。この先の節目はすべて目標。そこへ進む力になるのは、ファンの応援です。',
+    'road.now': '現在地', 'road.goal': 'ゴール',
+    'road.s1': 'スタジオ。毎日の練習、約60人のダンサー、ひとつのクルー。',
+    'road.s2.n': 'THE BIG STAGE', 'road.s2': 'もっと大きな観客、もっと大きなショーへ。国内から周辺の国々まで。',
+    'road.s3.n': 'THE WORLD WATCHES', 'road.s3': '世界中のファンが動画をシェアし、誰もが足を止めるところまで。',
+    'road.s4.n': 'FIRST RELEASE', 'road.s4': 'オリジナル楽曲とパフォーマンス映像を、世界に向けて。',
+    'road.s5.n': 'INTERNATIONAL STAGE', 'road.s5': 'キガリのエネルギーを、世界の舞台へ。',
+    'road.s6': 'この道の行き先。口に出して、本気で目指します。',
+    'road.seat': 'パートナー席 募集中',
+    'engine.eyebrow': 'ファンが道を進める仕組み',
+    'engine.title': '見るだけのクルーじゃない。<br>一緒に<em>育てる</em>クルー。',
+    'engine.1h': '参加する', 'engine.1': 'Front Row カードを受け取る。無料です。',
+    'engine.2h': '応援してシェア', 'engine.2': '見る、シェアする、会いに行く。ファンの一人ひとりが道を照らす光になる。',
+    'engine.3h': 'パートナーが加わる', 'engine.3': '明るく大きな応援が、次の節目を支える企業や個人のパトロンを呼ぶ。',
+    'engine.4h': 'クルーが次のステージへ', 'engine.4': 'もっと大きな舞台と新しい作品へ。道はどんどん明るくなる。',
+    'watch.eyebrow': '踊る姿を見る',
+    'watch.title': 'エネルギーは、<br>映像で感じて。',
+    'watch.text': '練習風景、パフォーマンス、新しい振り付けは Instagram で公開中。',
+    'watch.slot': 'このページで使う映像は、保護者の同意を得たものだけです。',
+    'card.member': 'Front Row メンバー',
+    'card.backk': 'ようこそ、最前列へ',
+    'card.backt': 'あなたの光が、道に灯りました。次の節目は「大きな舞台」。',
+    'card.hint': '名前を入力すると、カードに刻まれます。',
+    'card.placeholder': 'YOUR NAME',
+    'card.since': 'SINCE',
+    'join.eyebrow': 'Front Row — 無料メンバーシップ',
+    'join.title': '世界が気づく前に、<br>最前列の席を。',
+    'perk.card': 'あなたの名前入り Front Row カード',
+    'perk.news': 'ファンクラブ通信（新しい動画・ショー・節目のお知らせ）をメールでお届け',
+    'perk.early': 'ロードマップの最初の一歩から応援できる',
+    'form.name': 'カードに載せる名前', 'form.nameHelp': 'ニックネームでも大丈夫です。22文字まで。',
+    'form.email': 'メールアドレス', 'form.country': '国・地域',
+    'form.role': '参加のかたち', 'form.role.fan': 'ファンとして', 'form.role.patron': '個人の支援者として', 'form.role.company': '企業・団体として',
+    'form.org': '企業・団体名',
+    'form.consent': 'African Mirror ファンクラブからのお知らせをメールで受け取ることに同意します。配信はいつでも停止できます。',
+    'form.minor': '16歳未満の方は、保護者の方に確認してから参加してください。',
+    'form.submit': 'Front Row カードを受け取る',
+    'form.edit': 'カードを編集する',
+    'form.err.name': 'カードに載せる名前を入力してください。',
+    'form.err.email': '正しいメールアドレスを入力してください。',
+    'form.err.consent': 'お知らせの受け取りに同意するチェックを入れてください。',
+    'form.err.org': '企業・団体名を入力してください。',
+    'form.err.send': 'うまく送信できませんでした。少し時間をおいてもう一度お試しください。',
+    'form.sending': '送信中…',
+    'form.ok': '登録しました。最前列へようこそ。',
+    'form.okPreview': 'プレビューモード：カードはできましたが、まだどこにも送信されていません。',
+    'form.previewNote': 'プレビュー版：このフォームはまだ送信・保存を行いません。',
+    'partners.eyebrow': 'パートナー',
+    'partners.title': 'ファンが道を照らし、<br>パートナーが舞台をつくる。',
+    'partners.lead': '企業や個人の方は、ロードマップのひとつの節目を支えることも、キガリからグラミーまでの道のり全体を支えることもできます。パートナーはこのページで紹介する予定です。',
+    'partners.l1k': '企業の方へ', 'partners.l1h': 'ステージパートナー', 'partners.l1': 'ロードマップの節目をひとつ支える。舞台、作品、遠征など。',
+    'partners.l2k': '企業の方へ', 'partners.l2h': 'ロードパートナー', 'partners.l2': 'キガリからグラミーの舞台まで、道のり全体を支える。',
+    'partners.l3k': '個人の方へ', 'partners.l3h': 'パトロン', 'partners.l3': 'ファンから一歩進んで、個人としてクルーを支える。',
+    'partners.seat': '募集中',
+    'partners.cta': 'パートナーについて相談する',
+    'care.eyebrow': 'クルーを守るための約束',
+    'care.1': 'ダンサーの名前は載せません。個人情報、住まいや学校の情報も載せません。',
+    'care.2': 'このページに載せる投稿は、クルーと保護者の確認が取れたものだけです。',
+    'care.3': '数字は本物だけ。まだ達成していないことは「目標」と書きます。',
+    'final.title': 'どんな道も、<br>ひとつの光から始まる。',
+    'footer.tm': 'GRAMMY は Recording Academy の登録商標です。African Mirror は Recording Academy と提携関係になく、承認も受けていません。'
+  },
+  tr: {
+    'nav.stage': 'İzle',
+    'hero.more': 'Dans edişlerini izle ↓',
+    'stage.eyebrow': 'Sahnede',
+    'stage.title': "Oynat'a bas.<br>Kigali'yi hisset.",
+    'stage.text': "Doğrudan ekibin Instagram'ından. Bir reel'e dokun, Instagram'da izle — ya da “Burada oynat”a bas, bu sayfada izle.",
+    'stage.note': "@african_mirror.1 Instagram hesabından gömülü olarak gösteriliyor. Hiçbir şey kopyalanmıyor ya da yeniden yüklenmiyor.",
+    'stage.play': "Reel'i oynat",
+    'stage.setlist': 'Set listesi',
+    'stage.here': 'Burada oynat',
+    'stage.back': 'Geri',
+    'stage.watch': "Instagram'da izle",
+    'ig.followers': 'Takipçi',
+    'ig.posts': 'Gönderi',
+    'ig.asof': 'Ekim 2026 itibarıyla',
+    'stage.jump': "Reel'e git",
+    'stage.open': "Instagram'da aç",
+    'stage.loading': "Instagram'dan yükleniyor…",
+    'follow.cta': "Instagram'da takip et",
+    'follow.count': "Instagram'da 189 B takipçi · Ekim 2026",
+    'after.k': 'Sıradaki adım',
+    'after.t': "Ekibi Instagram'da takip et, yeni hiçbir figürü kaçırma.",
+    'nav.road': 'Yol', 'nav.crew': 'Ekip', 'nav.partners': 'Partnerler',
+    'cta.short': 'Ücretsiz katıl',
+    'cta.main': 'Front Row kartını al — ücretsiz',
+    'cta.road': 'Yolu gör',
+    'hero.kicker': 'Kigali, Ruanda · Çocuk dans ekibi · 5–16 yaş',
+    'hero.lead': 'Altmış genç dansçı. GRAMMY sahnesine giden tek bir yol. Bu yolun ne kadar parlayacağına hayranlar karar veriyor.',
+    'crew.eyebrow': 'Ekip',
+    'crew.statement': "African Mirror, Kigali'den bir çocuk dans ekibi. Sıkı çalışıyorlar, sahneyi sallıyorlar ve gözlerini zirveye dikmişler.",
+    'crew.f1.l': 'Yaş', 'crew.f2.l': 'Dansçı', 'crew.f2.v': '≈60', 'crew.f3.l': 'Yuva',
+    'mentor.role': 'Mentor',
+    'mentor.desc': 'Dansçı, komedyen ve ekibin mentoru.',
+    'road.eyebrow': 'Yol',
+    'road.title': "Kigali'deki bir stüdyodan<br>GRAMMY sahnesine.",
+    'road.note': 'Bu bir başarı listesi değil, bir plan. Önümüzdeki her durak bir hedef — ve oraya hayranlarla ulaşıyoruz.',
+    'road.now': 'Buradasın', 'road.goal': 'Hedef',
+    'road.s1': 'Stüdyo. Her gün antrenman, altmış dansçı, tek ekip.',
+    'road.s2.n': 'BÜYÜK SAHNE', 'road.s2': 'Daha büyük kalabalıklar, daha büyük şovlar — hem evde hem tüm bölgede.',
+    'road.s3.n': 'DÜNYA İZLİYOR', 'road.s3': 'Her yerden hayranlar ekibin videolarını paylaşıyor; ta ki dünya kaydırıp geçemeyene dek.',
+    'road.s4.n': 'İLK ESER', 'road.s4': 'Dünya için hazırlanmış özgün bir şarkı ve performans videosu.',
+    'road.s5.n': 'ULUSLARARASI SAHNE', 'road.s5': "Kigali'nin enerjisi, evden çok uzak sahnelerde.",
+    'road.s6': 'Bu yolun sonundaki hedef. Bunu yüksek sesle söylüyoruz.',
+    'road.seat': 'Boş partner koltuğu',
+    'engine.eyebrow': 'Hayranlar yolu nasıl ilerletir',
+    'engine.title': 'Sadece izlediğin bir ekip değil.<br>Birlikte <em>büyüttüğün</em> bir ekip.',
+    'engine.1h': 'Katıl', 'engine.1': 'Front Row kartını al. Ücretsiz.',
+    'engine.2h': 'Coş ve paylaş', 'engine.2': 'İzle, paylaş, orada ol. Her hayran yola biraz daha ışık katar.',
+    'engine.3h': 'Partnerler devreye girer', 'engine.3': 'Parlayan bir kalabalık, bir sonraki durağa güç verecek şirketleri ve destekçileri çeker.',
+    'engine.4h': 'Ekip seviye atlar', 'engine.4': 'Daha büyük sahneler, yeni işler — ve gittikçe parlayan bir yol.',
+    'watch.eyebrow': 'Hareketlerini gör',
+    'watch.title': 'Enerji canlıda<br>bambaşka.',
+    'watch.text': "Provalar, performanslar ve yeni figürler Instagram'da paylaşılıyor.",
+    'watch.slot': 'Bu sayfadaki videolarda yalnızca veli onayıyla paylaşılan görüntüler kullanılır.',
+    'card.member': 'Front Row üyesi',
+    'card.backk': 'Ön sıraya hoş geldin',
+    'card.backt': 'Artık senin ışığın da yolda. Sıradaki durak: büyük sahne.',
+    'card.hint': 'Adını yaz — kartına basılsın.',
+    'card.placeholder': 'ADIN',
+    'card.since': 'KATILIM',
+    'join.eyebrow': 'Front Row — ücretsiz üyelik',
+    'join.title': 'Dünya fark etmeden<br>yerini kap.',
+    'perk.card': 'Üzerinde adın yazan kendi Front Row kartın',
+    'perk.news': 'E-postayla fan kulübü haberleri — yeni videolar, şovlar ve dönüm noktaları',
+    'perk.early': 'Yolun ilk durağından itibaren sen de sayıl',
+    'form.name': 'Kartında yazacak ad', 'form.nameHelp': 'Takma ad da olur. En fazla 22 karakter.',
+    'form.email': 'E-posta', 'form.country': 'Ülke / bölge',
+    'form.role': 'Katılma şeklim', 'form.role.fan': 'Hayran olarak', 'form.role.patron': 'Bireysel destekçi olarak', 'form.role.company': 'Şirket / kurum olarak',
+    'form.org': 'Şirket / kurum adı',
+    'form.consent': 'African Mirror fan kulübü haberlerini e-postayla almayı kabul ediyorum. Aboneliğimi istediğim zaman iptal edebilirim.',
+    'form.minor': '16 yaşından küçük müsün? Katılmadan önce lütfen anne, baba ya da vasine sor.',
+    'form.submit': 'Front Row kartımı al',
+    'form.edit': 'Kartımı düzenle',
+    'form.err.name': 'Lütfen kartında yazacak adı gir.',
+    'form.err.email': 'Lütfen geçerli bir e-posta adresi gir.',
+    'form.err.consent': 'Fan kulübü haberlerini almak için lütfen kutuyu işaretle.',
+    'form.err.org': 'Lütfen şirket ya da kurum adını gir.',
+    'form.err.send': 'Bir şeyler ters gitti. Lütfen birazdan tekrar dene.',
+    'form.sending': 'Gönderiliyor…',
+    'form.ok': 'Artık aramızdasın. Ön sıraya hoş geldin.',
+    'form.okPreview': 'Önizleme modu: kartın hazır ama henüz hiçbir şey gönderilmedi.',
+    'form.previewNote': 'Önizleme: bu form henüz hiçbir şey göndermiyor ya da kaydetmiyor.',
+    'partners.eyebrow': 'Partnerler',
+    'partners.title': 'Hayranlar yolu aydınlatır.<br>Partnerler sahneyi kurar.',
+    'partners.lead': 'Şirketler ve bireyler yoldaki tek bir durağın — ya da yolculuğun tamamının — arkasında durabilir. Partnerlere bu sayfada yer verilecek.',
+    'partners.l1k': 'Şirketler için', 'partners.l1h': 'Durak partneri', 'partners.l1': 'Yoldaki bir durağı destekle — bir sahne, bir eser, bir yolculuk.',
+    'partners.l2k': 'Şirketler için', 'partners.l2h': 'Yol partneri', 'partners.l2': "Kigali'den GRAMMY sahnesine uzanan yolun tamamının arkasında dur.",
+    'partners.l3k': 'Bireyler için', 'partners.l3h': 'Hami', 'partners.l3': 'Bir adım daha ileri giden bir hayran olarak ekibi kişisel olarak destekle.',
+    'partners.seat': 'Boş koltuk',
+    'partners.cta': 'Partnerlik için bizimle konuş',
+    'care.eyebrow': 'Ekibi nasıl koruyoruz',
+    'care.1': 'Dansçıların adları burada yer almaz. Kişisel bilgi, ev ya da okul bilgisi paylaşılmaz.',
+    'care.2': 'Burada yalnızca ekip ve velileri tarafından onaylanan gönderiler gösterilir.',
+    'care.3': 'Yalnızca gerçek rakamları paylaşırız. Henüz başarmadığımız bir şeye hedef deriz.',
+    'final.title': 'Her yol<br>tek bir ışıkla başlar.',
+    'footer.tm': "GRAMMY, Recording Academy'nin tescilli ticari markasıdır. African Mirror, Recording Academy ile bağlantılı değildir ve Recording Academy tarafından onaylanmamıştır."
+  }
+};
+</script>
+<script>
+(() => {
+  'use strict';
+
+  /* ---------- Config ---------- */
+  // Where registrations are POSTed (JSON). Empty = preview mode: nothing is sent.
+  const FORM_ENDPOINT = '';
+  // Membership tiers. Only "free" is live today. To add a paid tier later, append an
+  // object here (price, perks, card finish) and wire the payment step in submit().
+  const TIERS = [
+    { id: 'free', label: 'FRONT ROW', price: 0, perks: ['perk.card', 'perk.news', 'perk.early'] }
+  ];
+  const ACTIVE_TIER = 'free';
+  // Instagram posts shown in the stage gallery live in the markup (.reel figures), each a
+  // saved thumbnail linking to the post. Official embeds load only on "Play here".
+  const IG_PROFILE = 'https://www.instagram.com/african_mirror.1/';
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+
+  /* ---------- i18n ---------- */
+  const dict = window.I18N || { en: {} };
+  let lang = 'en';
+  const t = (k) => (dict[lang] && dict[lang][k]) ?? dict.en[k] ?? k;
+
+  function applyLang(next) {
+    lang = dict[next] ? next : 'en';
+    document.documentElement.lang = lang;
+    $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
+    $$('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
+    $$('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+    renderPerks();
+    updateCardName();
+    renderSince();
+    labelReels();
+    try { localStorage.setItem('am-lang', lang); } catch (_) {}
+    requestAnimationFrame(layoutRoad);
+  }
+  let urlLang = null;
+  try { urlLang = new URLSearchParams(location.search).get('lang'); } catch (_) {}
+  let savedLang = null;
+  try { savedLang = localStorage.getItem('am-lang'); } catch (_) {}
+  const initialLang = urlLang || savedLang || 'en';
+  $$('.lang button').forEach(b => b.addEventListener('click', () => {
+    applyLang(b.dataset.lang);
+    try { const u = new URL(location.href); u.searchParams.set('lang', lang); history.replaceState(null, '', u); } catch (_) {}
+  }));
+
+  /* ---------- Header ---------- */
+  const hdr = $('.hdr');
+  const onScrollHdr = () => hdr.classList.toggle('is-solid', scrollY > 40);
+  let hdrTick = false;
+  addEventListener('scroll', () => { if (!hdrTick) { hdrTick = true; requestAnimationFrame(() => { hdrTick = false; onScrollHdr(); }); } }, { passive: true });
+  onScrollHdr();
+
+  /* ---------- Reveal ---------- */
+  // Hidden only after JS opts in (html.rv-ready); no JS or reduced motion shows everything.
+  const revealTargets = $$('.crew .eyebrow, .crew__statement, .crew__facts > div, .mentor, .stage__head > div > *, .stage__rail, .setlist, .stage__foot, .road__head > *, .engine .eyebrow, .engine__title, .engine__step, .join__stage, .join__form-wrap > *, .partners .eyebrow, .partners__title, .partners__lead, .lane, .seat, .care .eyebrow, .care__list li, .final__title, .final__ctas, .ftr__inner');
+  if (!reduceMotion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { rootMargin: '100000px 0px -8% 0px' }); // huge top margin: blocks skipped by a fast scroll or nav jump count as seen
+    revealTargets.forEach((el) => {
+      el.classList.add('rv');
+      const sib = el.parentElement ? Array.from(el.parentElement.children).indexOf(el) : 0;
+      el.style.transitionDelay = `${Math.min(sib, 4) * 70}ms`;
+      // drop the stagger once shown so hover transitions are not delayed
+      el.addEventListener('transitionend', function clear(ev) { if (ev.target === el && ev.propertyName === 'opacity') { el.style.transitionDelay = ''; el.removeEventListener('transitionend', clear); } });
+      io.observe(el);
+    });
+    document.documentElement.classList.add('rv-ready');
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.addEventListener) mq.addEventListener('change', (ev) => { if (ev.matches) { io.disconnect(); revealTargets.forEach(el => el.classList.add('in')); } });
+  }
+
+  /* ---------- Hero beams ---------- */
+  const cv = $('.hero__beams');
+  if (cv) {
+    const ctx = cv.getContext('2d');
+    let w = 0, h = 0, dpr = 1, running = true, raf = 0;
+    const beams = [
+      { x: .12, hue: 'rgba(245,184,61,', sp: .00035, ph: 0, wd: .16 },
+      { x: .32, hue: 'rgba(63,182,232,', sp: .00028, ph: 1.7, wd: .12 },
+      { x: .5, hue: 'rgba(255,215,122,', sp: .00022, ph: 3.1, wd: .2 },
+      { x: .68, hue: 'rgba(255,107,44,', sp: .0003, ph: 4.4, wd: .12 },
+      { x: .88, hue: 'rgba(245,184,61,', sp: .00033, ph: 2.4, wd: .16 }
+    ];
+    const dust = Array.from({ length: 70 }, () => ({ x: Math.random(), y: Math.random(), r: Math.random() * 1.6 + .3, v: Math.random() * .00012 + .00004, a: Math.random() * .6 + .2 }));
+    function size() {
+      dpr = Math.min(devicePixelRatio || 1, 2);
+      w = cv.clientWidth; h = cv.clientHeight;
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function frame(time) {
+      ctx.clearRect(0, 0, w, h);
+      ctx.globalCompositeOperation = 'lighter';
+      const baseY = h * 1.02;
+      beams.forEach(b => {
+        const ang = Math.sin(time * b.sp + b.ph) * .5; // sweep
+        const len = h * 1.25;
+        const ox = b.x * w, tx = ox + Math.sin(ang) * len, ty = baseY - Math.cos(ang) * len;
+        const half = b.wd * w * .5;
+        const nx = Math.cos(ang), ny = Math.sin(ang);
+        const g = ctx.createLinearGradient(ox, baseY, tx, ty);
+        g.addColorStop(0, b.hue + '.32)'); g.addColorStop(.55, b.hue + '.07)'); g.addColorStop(1, b.hue + '0)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.moveTo(ox - 6, baseY); ctx.lineTo(ox + 6, baseY);
+        ctx.lineTo(tx + nx * half, ty + ny * half); ctx.lineTo(tx - nx * half, ty - ny * half);
+        ctx.closePath(); ctx.fill();
+      });
+      dust.forEach(p => {
+        p.y -= p.v * 16; if (p.y < -.02) { p.y = 1.02; p.x = Math.random(); }
+        ctx.fillStyle = `rgba(255,224,160,${p.a * (0.4 + 0.6 * p.y)})`;
+        ctx.beginPath(); ctx.arc(p.x * w, p.y * h, p.r, 0, Math.PI * 2); ctx.fill();
+      });
+      ctx.globalCompositeOperation = 'source-over';
+      if (running && !reduceMotion) raf = requestAnimationFrame(frame);
+    }
+    size(); addEventListener('resize', size);
+    if (reduceMotion) frame(4000);
+    else {
+      raf = requestAnimationFrame(frame);
+      if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => {
+        running = e.isIntersecting;
+        if (running) { cancelAnimationFrame(raf); raf = requestAnimationFrame(frame); }
+      }).observe(cv);
+    }
+  }
+
+  /* ---------- Road ---------- */
+  const track = $('.road__track');
+  const baseP = $('.road__base'), litP = $('.road__lit');
+  const stops = $$('.stop');
+  let roadLen = 0, nodeYs = [];
+
+  function layoutRoad() {
+    if (!track) return;
+    const tr = track.getBoundingClientRect();
+    const svg = $('.road__line');
+    svg.setAttribute('viewBox', `0 0 ${tr.width} ${tr.height}`);
+    svg.setAttribute('width', tr.width); svg.setAttribute('height', tr.height);
+    const pts = stops.map(s => {
+      const r = $('.stop__node', s).getBoundingClientRect();
+      return [r.left + r.width / 2 - tr.left, r.top + r.height / 2 - tr.top];
+    });
+    nodeYs = pts.map(p => p[1]);
+    const narrow = innerWidth <= 640;
+    let d = `M ${pts[0][0]} ${Math.max(0, pts[0][1] - 60)} L ${pts[0][0]} ${pts[0][1]}`;
+    for (let i = 1; i < pts.length; i++) {
+      const [x0, y0] = pts[i - 1], [x1, y1] = pts[i];
+      const dy = (y1 - y0) / 2;
+      if (narrow) d += ` L ${x1} ${y1}`;
+      else {
+        const sway = (i % 2 ? 1 : -1) * Math.min(tr.width * .12, 120);
+        d += ` C ${x0 + sway} ${y0 + dy}, ${x1 + sway} ${y1 - dy}, ${x1} ${y1}`;
+      }
+    }
+    baseP.setAttribute('d', d); litP.setAttribute('d', d);
+    roadLen = litP.getTotalLength();
+    litP.style.strokeDasharray = `${roadLen} ${roadLen}`;
+    updateRoad();
+  }
+  function lengthAtY(y) { // path is monotonic in y
+    let lo = 0, hi = roadLen;
+    for (let i = 0; i < 18; i++) { const m = (lo + hi) / 2; if (litP.getPointAtLength(m).y < y) lo = m; else hi = m; }
+    return lo;
+  }
+  function updateRoad() {
+    if (!track || !roadLen) return;
+    const tr = track.getBoundingClientRect();
+    const y = reduceMotion ? Infinity : innerHeight * .62 - tr.top;
+    const L = y >= nodeYs[nodeYs.length - 1] ? roadLen : y <= 0 ? 0 : lengthAtY(y);
+    litP.style.strokeDashoffset = String(roadLen - L);
+    stops.forEach((s, i) => s.classList.toggle('is-lit', y >= nodeYs[i] - 2));
+  }
+  let roadTick = false;
+  addEventListener('scroll', () => { if (!roadTick) { roadTick = true; requestAnimationFrame(() => { roadTick = false; updateRoad(); }); } }, { passive: true });
+  let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(layoutRoad, 120); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layoutRoad);
+  addEventListener('load', layoutRoad);
+
+  /* ---------- Membership card ---------- */
+  const card = $('.card3d');
+  const nameIn = $('#f-name');
+  const tier = TIERS.find(x => x.id === ACTIVE_TIER) || TIERS[0];
+  if (card) { card.dataset.tier = tier.id; $('[data-tier-label]', card).textContent = tier.label; }
+
+  function renderPerks() {
+    const ul = $('[data-perks]'); if (!ul) return;
+    ul.innerHTML = '';
+    tier.perks.forEach(k => { const li = document.createElement('li'); li.textContent = t(k); ul.appendChild(li); });
+  }
+  let joinedAt = null;
+  function renderSince() {
+    if (!card || !joinedAt) return;
+    $('[data-card-since]', card).textContent = `${t('card.since')} ${joinedAt.getFullYear()}.${String(joinedAt.getMonth() + 1).padStart(2, '0')}`;
+  }
+  function updateCardName() {
+    if (!card) return;
+    const v = (nameIn.value || '').trim();
+    $$('[data-card-name]', card).forEach(el => {
+      el.textContent = v ? v.toLocaleUpperCase(lang) : t('card.placeholder');
+      el.classList.toggle('is-empty', !v);
+    });
+  }
+  nameIn && nameIn.addEventListener('input', () => {
+    updateCardName();
+    if (card.dataset.state === 'idle') card.dataset.state = 'typing';
+  });
+
+  // Tilt: follows the pointer on desktop, sways gently otherwise.
+  if (card && !reduceMotion) {
+    let hovering = false;
+    const setTilt = (rx, ry, mx, my) => {
+      card.style.setProperty('--rx', rx + 'deg'); card.style.setProperty('--ry', ry + 'deg');
+      card.style.setProperty('--mx', mx + '%'); card.style.setProperty('--my', my + '%');
+    };
+    card.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      const r = card.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width, py = (e.clientY - r.top) / r.height;
+      hovering = true; card.classList.add('is-tilting');
+      setTilt((.5 - py) * 18, (px - .5) * 24, px * 100, py * 100);
+    });
+    card.addEventListener('pointerleave', () => { hovering = false; card.classList.remove('is-tilting'); });
+    let visible = !('IntersectionObserver' in window), swayRaf = 0;
+    const sway = (time) => {
+      swayRaf = 0;
+      if (!visible) return;
+      if (!hovering) {
+        const a = time / 1000;
+        card.classList.add('is-tilting');
+        setTilt(Math.sin(a * .9) * 6, Math.sin(a * .6) * 12, 50 + Math.sin(a * .6) * 40, 50 + Math.cos(a * .9) * 30);
+      }
+      swayRaf = requestAnimationFrame(sway);
+    };
+    if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => {
+      visible = e.isIntersecting;
+      if (visible && !swayRaf) swayRaf = requestAnimationFrame(sway);
+    }).observe(card);
+    else swayRaf = requestAnimationFrame(sway);
+  }
+
+  function flip(state) {
+    card.classList.add('is-flipping');
+    card.dataset.state = state;
+    clearTimeout(flip.t); flip.t = setTimeout(() => card.classList.remove('is-flipping'), 950);
+  }
+
+  /* ---------- Form ---------- */
+  const form = $('.form');
+  const errEl = $('.form__error'), statusEl = $('.form__status'), editBtn = $('.form__edit');
+  const orgField = $('.field--company'), orgIn = $('#f-org');
+
+  function syncRole() {
+    const role = form.role.value;
+    orgField.hidden = role !== 'company';
+    orgIn.required = role === 'company';
+  }
+  $$('input[name="role"]', form).forEach(r => r.addEventListener('change', syncRole));
+  $$('[data-preset-role]').forEach(a => a.addEventListener('click', () => {
+    const r = $(`input[name="role"][value="${a.dataset.presetRole}"]`, form);
+    if (r) { r.checked = true; syncRole(); }
+    setTimeout(() => nameIn.focus({ preventScroll: true }), 700);
+  }));
+
+  function fail(input, key) {
+    errEl.textContent = t(key);
+    input.setAttribute('aria-invalid', 'true');
+    input.focus();
+    return false;
+  }
+  function validate() {
+    $$('[aria-invalid]', form).forEach(el => el.removeAttribute('aria-invalid'));
+    errEl.textContent = '';
+    if (!nameIn.value.trim()) return fail(nameIn, 'form.err.name');
+    const email = $('#f-email');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.value.trim())) return fail(email, 'form.err.email');
+    if (form.role.value === 'company' && !orgIn.value.trim()) return fail(orgIn, 'form.err.org');
+    if (!form.consent.checked) return fail(form.consent, 'form.err.consent');
+    return true;
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+    const submitBtn = $('button[type="submit"]', form);
+    const payload = {
+      tier: tier.id,
+      display_name: nameIn.value.trim(),
+      email: $('#f-email').value.trim(),
+      country: $('#f-country').value.trim(),
+      role: form.role.value,
+      organisation: form.role.value === 'company' ? orgIn.value.trim() : '',
+      consent: true,
+      lang,
+      joined_at: new Date().toISOString()
+    };
+    let preview = !FORM_ENDPOINT;
+    if (!preview) {
+      submitBtn.disabled = true; statusEl.textContent = t('form.sending');
+      try {
+        const res = await fetch(FORM_ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+        if (!res.ok) throw new Error(String(res.status));
+      } catch (_) {
+        submitBtn.disabled = false; statusEl.textContent = ''; errEl.textContent = t('form.err.send');
+        return;
+      }
+      submitBtn.disabled = false;
+    }
+    joinedAt = new Date();
+    renderSince();
+    flip('registered');
+    form.classList.add('is-done');
+    statusEl.textContent = preview ? t('form.okPreview') : t('form.ok');
+    editBtn.hidden = false;
+    $('.after-join').hidden = false;
+    if (innerWidth <= 900) card.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+  });
+
+  editBtn.addEventListener('click', () => {
+    flip('typing');
+    form.classList.remove('is-done');
+    statusEl.textContent = '';
+    editBtn.hidden = true;
+    $('.after-join').hidden = true;
+    nameIn.focus();
+  });
+
+  /* ---------- Stage: Instagram reels (official embeds) ---------- */
+  const rail = $('[data-reels]');
+  const setlist = $('[data-setlist]');
+  const pad = (n) => String(n).padStart(2, '0');
+
+  // Each reel is a saved thumbnail that links to the post on Instagram (works everywhere,
+  // including iOS Safari with tracking protection). "Play here" adds the official embed
+  // on top, only if Instagram actually answers; otherwise the thumbnail stays.
+  const EMBED_TIMEOUT = 8000;
+  addEventListener('message', (e) => {
+    if (e.origin !== 'https://www.instagram.com') return;
+    let d = e.data;
+    try { if (typeof d === 'string') d = JSON.parse(d); } catch (_) { return; }
+    if (!d || d.type !== 'MEASURE' || !d.details) return;
+    const f = $$('.reel iframe', rail).find(x => x.contentWindow === e.source);
+    if (!f) return;
+    f.style.height = `${Math.ceil(d.details.height)}px`;
+    f.closest('.reel').classList.add('is-live');
+  });
+  function closeEmbed(item) {
+    item.classList.remove('is-playing', 'is-live');
+    const box = $('.reel__embed', item); box.innerHTML = '';
+  }
+  function playHere(item) {
+    if (item.classList.contains('is-playing')) return;
+    item.classList.add('is-playing');
+    const box = $('.reel__embed', item);
+    const f = document.createElement('iframe');
+    f.src = `https://www.instagram.com/reel/${item.dataset.code}/embed/`;
+    f.title = `Instagram reel ${item.dataset.no} — @african_mirror.1`;
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.setAttribute('allowfullscreen', ''); f.setAttribute('scrolling', 'no');
+    const back = document.createElement('button');
+    back.type = 'button'; back.className = 'reel__back'; back.dataset.i18n = 'stage.back'; back.textContent = t('stage.back');
+    back.addEventListener('click', () => closeEmbed(item));
+    box.append(f, back);
+    setTimeout(() => {
+      if (item.classList.contains('is-playing') && !item.classList.contains('is-live')) {
+        closeEmbed(item);
+        item.classList.add('is-blocked');
+      }
+    }, EMBED_TIMEOUT);
+  }
+  if (rail) {
+    const items = $$('.reel', rail);
+    items.forEach((item, i) => {
+      $('.reel__here', item).addEventListener('click', () => playHere(item));
+      if (setlist) {
+        const li = document.createElement('li');
+        li.innerHTML = `<button type="button" data-jump="${i}"><span>${pad(i + 1)}</span></button>`;
+        setlist.appendChild(li);
+      }
+    });
+    const active = () => {
+      const r = rail.getBoundingClientRect();
+      let best = 0, bd = Infinity;
+      items.forEach((it, i) => { const d = Math.abs(it.getBoundingClientRect().left - r.left - (parseFloat(getComputedStyle(rail).paddingLeft) || 0)); if (d < bd) { bd = d; best = i; } });
+      return best;
+    };
+    const goTo = (i) => {
+      const it = items[Math.max(0, Math.min(items.length - 1, i))];
+      rail.scrollTo({ left: it.offsetLeft - (parseFloat(getComputedStyle(rail).paddingLeft) || 0), behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+    const markSet = () => {
+      const a = active();
+      $$('button', setlist).forEach((b, i) => b.setAttribute('aria-current', i === a ? 'true' : 'false'));
+    };
+    let st; rail.addEventListener('scroll', () => { clearTimeout(st); st = setTimeout(markSet, 80); }, { passive: true });
+    markSet();
+    $$('[data-rail]').forEach(btn => btn.addEventListener('click', () => goTo(active() + Number(btn.dataset.rail))));
+    setlist && setlist.addEventListener('click', (e) => { const b = e.target.closest('[data-jump]'); if (b) goTo(Number(b.dataset.jump)); });
+  }
+  function labelReels() {
+    $$('.reel', rail).forEach((it) => $('.reel__link', it).setAttribute('aria-label', `${t('stage.watch')} ${it.dataset.no}`));
+    if (!setlist) return;
+    setlist.setAttribute('aria-label', t('stage.setlist'));
+    $$('button', setlist).forEach((b, i) => b.setAttribute('aria-label', `${t('stage.jump')} ${pad(i + 1)}`));
+  }
+
+  /* ---------- Init ---------- */
+  if (!FORM_ENDPOINT) $('[data-preview-note]').hidden = false;
+  syncRole();
+  applyLang(initialLang);
+})();
+</script>
+</body>
+</html>
