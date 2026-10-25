@@ -40,3 +40,28 @@ document.querySelectorAll(".carousel").forEach(function (c) {
   c.querySelector(".car-prev").addEventListener("click", function () { step(-1); });
   c.querySelector(".car-next").addEventListener("click", function () { step(1); });
 });
+// Scroll reveal for blocks the GSAP layer (js/motion.js) does not animate. Hidden only after JS opts in.
+(function () {
+  var mq = window.matchMedia ? matchMedia("(prefers-reduced-motion: reduce)") : null;
+  if ((mq && mq.matches) || !("IntersectionObserver" in window)) return;
+  var els = document.querySelectorAll(".portrait, .role, .tag-row, .regions, .partner, .chart, .about, .behind-title, .behind-sub, .logo-band, .car-nav, .contact-inner .btn");
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("rv-in"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "100000px 0px -8% 0px" }); // huge top margin: blocks skipped by a fast scroll or nav jump count as seen
+  els.forEach(function (el) { el.classList.add("rv"); io.observe(el); });
+  document.documentElement.classList.add("rv-ready");
+  if (mq && mq.addEventListener) mq.addEventListener("change", function (e) {
+    if (!e.matches) return;
+    io.disconnect();
+    els.forEach(function (el) { el.classList.add("rv-in"); });
+  });
+})();
+// The Geist swap and late media shift the layout after ScrollTrigger measured it; re-measure so no reveal is left untriggered.
+(function () {
+  function refresh() { if (window.ScrollTrigger) window.ScrollTrigger.refresh(); }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+  window.addEventListener("load", refresh);
+})();
